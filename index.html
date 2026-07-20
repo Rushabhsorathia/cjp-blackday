@@ -174,11 +174,21 @@
   }
   .section-label {
     font-family: 'Oswald', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     color: var(--red-light);
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--red-light);
+    fill: none;
+    stroke-width: 2;
   }
   .section-title {
     font-family: 'Oswald', sans-serif;
@@ -215,8 +225,14 @@
   }
   .origin-card:hover { border-color: var(--red-dark); }
   .origin-card .icon {
-    font-size: 32px;
     margin-bottom: 16px;
+  }
+  .origin-card .icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--red-light);
+    fill: none;
+    stroke-width: 2;
   }
   .origin-card h3 {
     font-family: 'Oswald', sans-serif;
@@ -276,20 +292,29 @@
     width: 50%;
     text-align: right;
     padding: 16px 40px 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
   .tl-time .time-badge {
     font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     color: var(--red-light);
     letter-spacing: 1px;
   }
   .tl-time .time-label {
-    font-size: 12px;
-    color: var(--gray);
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-light);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 4px;
+    letter-spacing: 3px;
+    margin-top: 6px;
+    padding: 4px 12px;
+    background: rgba(220,38,38,0.1);
+    border-radius: 6px;
+    display: inline-block;
   }
   .tl-dot {
     position: absolute;
@@ -347,7 +372,7 @@
 
   @media (max-width: 768px) {
     .timeline-line { left: 20px; }
-    .tl-time { width: 100%; text-align: left; padding-left: 50px; padding-right: 0; }
+    .tl-time { width: 100%; text-align: left; padding-left: 50px; padding-right: 0; align-items: flex-start; }
     .tl-dot { left: 20px; }
     .tl-content { width: 100%; padding-left: 50px; padding-right: 0; }
     .tl-item { flex-direction: column; }
@@ -384,6 +409,14 @@
     transform: translateY(-4px);
     border-color: var(--red);
     box-shadow: 0 12px 40px rgba(220,38,38,0.1);
+  }
+  .demand-card .demand-icon {
+    width: 40px;
+    height: 40px;
+    stroke: var(--red);
+    fill: none;
+    stroke-width: 2;
+    margin: 0 auto 20px;
   }
   .demand-number {
     font-family: 'Oswald', sans-serif;
@@ -556,28 +589,45 @@
   /* STATS */
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
   }
   .stat-card {
     background: var(--bg-card);
     border: 1px solid var(--gray-border);
     border-radius: 16px;
-    padding: 40px 24px;
+    padding: 36px 20px;
     text-align: center;
     transition: all 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
   }
   .stat-card:hover {
     border-color: var(--red);
     transform: translateY(-2px);
   }
+  .stat-icon {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gray);
+    fill: none;
+    stroke-width: 2;
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+  .stat-card:hover .stat-icon { stroke: var(--red-light); opacity: 1; }
   .stat-number {
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(36px, 6vw, 56px);
+    font-size: clamp(28px, 4.5vw, 44px);
     font-weight: 700;
     color: var(--red-light);
     line-height: 1;
     margin-bottom: 8px;
+    white-space: nowrap;
   }
   .stat-label {
     font-size: 13px;
@@ -786,7 +836,7 @@
 
 <!-- ORIGIN -->
 <section id="origin" class="fade-in">
-  <div class="section-label">How It Began</div>
+  <div class="section-label"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg> How It Began</div>
   <h2 class="section-title">The Origin of CJP</h2>
   <p class="section-subtitle">
     A satirical youth movement born from a judge's insult, ignited by a leaked exam, and transformed into the largest student protest in a generation.
@@ -794,14 +844,18 @@
 
   <div class="origin-grid">
     <div class="origin-card">
-      <div class="icon">&#9881;</div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg>
+      </div>
       <h3>The Spark</h3>
       <p>
         In May 2026, Chief Justice of India <strong style="color:#fff">Surya Kant</strong> called unemployed youth turning to journalism and activism "cockroaches" and "parasites of society." The remark went viral. Digital strategist <strong style="color:#fff">Abhijeet Dipke</strong>, a Boston University student, posted: <em>"What if all cockroaches come together?"</em> Millions responded.
       </p>
     </div>
     <div class="origin-card">
-      <div class="icon">&#128221;</div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h6"/><path d="M9 9h1"/></svg>
+      </div>
       <h3>The Trigger</h3>
       <p>
         The <strong style="color:#fff">2026 NEET-UG medical entrance exam paper was leaked</strong>, forcing cancellation. Re-exams were held, but trust was shattered. <strong style="color:#fff">~20 students died by suicide</strong> after the leak. Families had taken loans for coaching. Dreams were destroyed. The government refused to take accountability.
@@ -826,7 +880,7 @@
 
 <!-- TIMELINE -->
 <section id="timeline" class="fade-in">
-  <div class="section-label">Hour by Hour</div>
+  <div class="section-label"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Hour by Hour</div>
   <h2 class="section-title">Black Day Timeline</h2>
   <p class="section-subtitle">
     The complete sequence of events on July 20, 2026, from pre-dawn lockdown to the midnight reclaim. Every timestamp verified across NDTV, Indian Express, Deccan Herald, ETV Bharat, NBC/AP, The Hindu, and BBC.
@@ -1061,7 +1115,7 @@
 
 <!-- DEMANDS -->
 <section id="demands" class="fade-in">
-  <div class="section-label">What They Asked For</div>
+  <div class="section-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> What They Asked For</div>
   <h2 class="section-title">The Three Demands</h2>
   <p class="section-subtitle">
     Submitted in writing to Health Minister JP Nadda at 4:00 PM. He responded with "will discuss at the appropriate level." Zero commitments. Zero demands met.
@@ -1069,16 +1123,19 @@
 
   <div class="demands-grid">
     <div class="demand-card">
+      <svg class="demand-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       <div class="demand-number">01</div>
       <h3>Release Wangchuk</h3>
       <p>Immediate release of Sonam Wangchuk from Safdarjung Hospital. No restrictions on his movement. Allow him to protest peacefully.</p>
     </div>
     <div class="demand-card">
+      <svg class="demand-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
       <div class="demand-number">02</div>
       <h3>Sack Pradhan</h3>
       <p>Immediate resignation or sacking of Union Education Minister Dharmendra Pradhan for repeated exam paper leaks and systemic failure under his watch.</p>
     </div>
     <div class="demand-card">
+      <svg class="demand-icon" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       <div class="demand-number">03</div>
       <h3>1 Crore Compensation</h3>
       <p>Rs 1 crore compensation for the families of every student who died by suicide after the NEET-UG paper leak destroyed their future.</p>
@@ -1088,7 +1145,7 @@
 
 <!-- PEOPLE -->
 <section id="people" class="fade-in">
-  <div class="section-label">Key Figures</div>
+  <div class="section-label"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Key Figures</div>
   <h2 class="section-title">The People</h2>
   <p class="section-subtitle">
     The leaders, the voices, and the figures who shaped the movement and the day.
@@ -1163,7 +1220,7 @@
 
 <!-- VIOLENCE ANALYSIS -->
 <section id="violence" class="fade-in">
-  <div class="section-label">The Contested Question</div>
+  <div class="section-label"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> The Contested Question</div>
   <h2 class="section-title">Who Started the Violence?</h2>
   <p class="section-subtitle">
     Both sides have a narrative. The evidence is genuinely contested. Here is what the reporting actually shows, without picking a side.
@@ -1247,7 +1304,7 @@
 
 <!-- NUMBERS -->
 <section id="numbers" class="fade-in">
-  <div class="section-label">By the Numbers</div>
+  <div class="section-label"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> By the Numbers</div>
   <h2 class="section-title">The Cost of July 20</h2>
   <p class="section-subtitle">
     The quantified impact of a single day of protest in the world's largest democracy.
@@ -1255,41 +1312,49 @@
 
   <div class="stats-grid">
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <div class="stat-number">50,000+</div>
       <div class="stat-label">Protesters</div>
       <div class="stat-sub">Indian Express estimate</div>
     </div>
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
       <div class="stat-number">100+</div>
       <div class="stat-label">Detained</div>
       <div class="stat-sub">Delhi Police official</div>
     </div>
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       <div class="stat-number">100+</div>
       <div class="stat-label">Total Injured</div>
       <div class="stat-sub">50+ police, 50+ protesters</div>
     </div>
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/><path d="M7 19l-2 3"/><path d="M17 19l2 3"/></svg>
       <div class="stat-number">5</div>
       <div class="stat-label">Metro Stations Shut</div>
       <div class="stat-sub">Rajiv Chowk, Janpath, +3</div>
     </div>
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 2L4 7v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V7l-8-5z"/></svg>
       <div class="stat-number">5,000+</div>
       <div class="stat-label">Police Deployed</div>
       <div class="stat-sub">+ 25 CAPF battalions</div>
     </div>
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg>
       <div class="stat-number">0</div>
       <div class="stat-label">Demands Met</div>
       <div class="stat-sub">After 5-hour Nadda meeting</div>
     </div>
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
       <div class="stat-number">~20</div>
       <div class="stat-label">Student Suicides</div>
       <div class="stat-sub">After NEET paper leak</div>
     </div>
     <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       <div class="stat-number">23</div>
       <div class="stat-label">Days of Hunger Strike</div>
       <div class="stat-sub">Wangchuk, still ongoing</div>
@@ -1299,7 +1364,7 @@
 
 <!-- MEMORIAL -->
 <div class="memorial-section fade-in">
-  <div class="section-label" style="text-align:center;">In Memory</div>
+  <div class="section-label" style="text-align:center;"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> In Memory</div>
   <h2 class="section-title" style="text-align:center;">The Students We Lost</h2>
   <div class="memorial-wall" id="memorial-wall">
     <!-- candles generated by JS -->
