@@ -742,6 +742,41 @@
   }
   .btn-secondary:hover { border-color: var(--red); color: var(--red-light); }
 
+  /* VIDEO SECTION */
+  .video-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gray-border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-caption {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+  @media (max-width: 768px) {
+    .video-section { padding: 40px 16px; }
+  }
+
   /* FOOTER */
   footer {
     border-top: 1px solid var(--gray-border);
@@ -1011,6 +1046,15 @@
     <span id="storyBtnText">Play Story Mode</span>
   </button>
   <div class="hero-scroll" style="margin-top:24px;">Scroll to uncover the truth &darr;</div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-section fade-in">
+  <div class="section-label" style="justify-content:center;"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> Watch</div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/QnUIKoNK84E" title="CJP Sansad Chalo March - July 20, 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <p class="video-caption">Video documentation of the Sansad Chalo March</p>
 </div>
 
 <!-- ORIGIN -->
