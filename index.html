@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACK DAY — The True Story of Sansad Chalo | July 20, 2026</title>
+<meta name="description" content="The complete, in-depth account of the CJP Sansad Chalo March on July 20, 2026. A day that shook India's democracy. The true story.">
+<meta property="og:title" content="BLACK DAY — The True Story of Sansad Chalo">
+<meta property="og:description" content="July 20, 2026. When students marched to Parliament and met tear gas. The complete story.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #141414;
+    --bg-elevated: #1a1a1a;
+    --red: #dc2626;
+    --red-dark: #991b1b;
+    --red-light: #ef4444;
+    --amber: #f59e0b;
+    --gray: #6b7280;
+    --gray-light: #9ca3af;
+    --gray-border: #2a2a2a;
+    --text: #f3f4f6;
+    --text-dim: #9ca3af;
+    --white: #ffffff;
+    --green: #10b981;
+    --blue: #3b82f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--red-dark); border-radius: 3px; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-border);
+    z-index: 1000;
+    padding: 12px 0;
+  }
+  nav .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+  }
+  nav .logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--red-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  nav .logo span { color: var(--text); }
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+  }
+  nav ul li a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+  nav ul li a:hover { color: var(--red-light); }
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 40px;
+    position: relative;
+    background: radial-gradient(ellipse at center, #1a0000 0%, var(--bg) 70%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      linear-gradient(rgba(220,38,38,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(220,38,38,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+  }
+  .hero-date {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: var(--red-light);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(48px, 12vw, 140px);
+    font-weight: 700;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #dc2626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero h1 .black { 
+    -webkit-text-fill-color: #ffffff;
+  }
+  .hero h1 .day {
+    -webkit-text-fill-color: #dc2626;
+  }
+  .hero-tagline {
+    font-size: clamp(16px, 3vw, 22px);
+    color: var(--text-dim);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+    line-height: 1.5;
+    position: relative;
+  }
+  .hero-tagline strong { color: var(--white); font-weight: 600; }
+  .hero-scroll {
+    position: relative;
+    color: var(--gray);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 100px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    color: var(--red-light);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .section-subtitle {
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 700px;
+    margin-bottom: 60px;
+    font-weight: 300;
+  }
+
+  /* ORIGIN STORY */
+  .origin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 768px) {
+    .origin-grid { grid-template-columns: 1fr; }
+  }
+  .origin-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-radius: 12px;
+    padding: 32px;
+    transition: border-color 0.3s;
+  }
+  .origin-card:hover { border-color: var(--red-dark); }
+  .origin-card .icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .origin-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .origin-card p {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .quote-block {
+    background: var(--bg-elevated);
+    border-left: 4px solid var(--red);
+    padding: 28px 32px;
+    border-radius: 0 12px 12px 0;
+    margin: 40px 0;
+  }
+  .quote-block .quote-text {
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .quote-block .quote-author {
+    font-size: 13px;
+    color: var(--red-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  /* TIMELINE */
+  .timeline-wrapper {
+    position: relative;
+    padding-left: 0;
+  }
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--red-dark) 0%, var(--gray-border) 50%, var(--red-dark) 100%);
+    transform: translateX(-50%);
+  }
+  .tl-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .tl-time {
+    width: 50%;
+    text-align: right;
+    padding: 16px 40px 16px 0;
+  }
+  .tl-time .time-badge {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--red-light);
+    letter-spacing: 1px;
+  }
+  .tl-time .time-label {
+    font-size: 12px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+  .tl-dot {
+    position: absolute;
+    left: 50%;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--red);
+    border: 3px solid var(--bg);
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 12px rgba(220,38,38,0.5);
+  }
+  .tl-content {
+    width: 50%;
+    padding: 16px 0 16px 40px;
+  }
+  .tl-content .tl-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    transition: all 0.3s;
+  }
+  .tl-content .tl-card:hover {
+    border-color: var(--red-dark);
+    transform: translateX(-4px);
+  }
+  .tl-content .tl-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .tl-content .tl-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .tl-content .tl-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .tl-tag.violence { background: rgba(220,38,38,0.15); color: var(--red-light); }
+  .tl-tag.police { background: rgba(59,130,246,0.15); color: var(--blue); }
+  .tl-tag.political { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .tl-tag.cjp { background: rgba(16,185,129,0.15); color: var(--green); }
+
+  @media (max-width: 768px) {
+    .timeline-line { left: 20px; }
+    .tl-time { width: 100%; text-align: left; padding-left: 50px; padding-right: 0; }
+    .tl-dot { left: 20px; }
+    .tl-content { width: 100%; padding-left: 50px; padding-right: 0; }
+    .tl-item { flex-direction: column; }
+    .tl-content .tl-card:hover { transform: none; }
+  }
+
+  /* DEMANDS */
+  .demands-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .demands-grid { grid-template-columns: 1fr; }
+  }
+  .demand-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .demand-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .demand-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--red);
+    box-shadow: 0 12px 40px rgba(220,38,38,0.1);
+  }
+  .demand-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+  .demand-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+  .demand-card p {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* PEOPLE */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .person-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    transition: all 0.3s;
+  }
+  .person-card:hover { border-color: var(--red-dark); }
+  .person-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--red-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .person-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .person-role {
+    font-size: 13px;
+    color: var(--red-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .person-status {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+  .person-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  .badge-hunger { background: rgba(220,38,38,0.15); color: var(--red-light); }
+  .badge-active { background: rgba(16,185,129,0.15); color: var(--green); }
+  .badge-detained { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .badge-government { background: rgba(107,114,128,0.15); color: var(--gray-light); }
+
+  /* VIOLENCE ANALYSIS */
+  .violence-wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .violence-side {
+    padding: 36px;
+    border-bottom: 1px solid var(--gray-border);
+  }
+  .violence-side:last-child { border-bottom: none; }
+  .violence-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .violence-header h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .violence-badge-a {
+    background: rgba(59,130,246,0.15);
+    color: var(--blue);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .violence-badge-b {
+    background: rgba(220,38,38,0.15);
+    color: var(--red-light);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .violence-list {
+    list-style: none;
+  }
+  .violence-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(42,42,42,0.5);
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    gap: 12px;
+  }
+  .violence-list li:last-child { border-bottom: none; }
+  .violence-list li::before {
+    content: '▸';
+    color: var(--gray);
+    flex-shrink: 0;
+  }
+  .violence-list li strong { color: var(--white); }
+  .assessment-box {
+    margin-top: 32px;
+    background: linear-gradient(135deg, rgba(220,38,38,0.08), rgba(220,38,38,0.02));
+    border: 1px solid rgba(220,38,38,0.2);
+    border-radius: 12px;
+    padding: 32px;
+  }
+  .assessment-box h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: var(--red-light);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .assessment-box p {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .assessment-box p strong { color: var(--white); }
+
+  /* STATS */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-radius: 16px;
+    padding: 40px 24px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .stat-card:hover {
+    border-color: var(--red);
+    transform: translateY(-2px);
+  }
+  .stat-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 700;
+    color: var(--red-light);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .stat-sub {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+
+  /* MEMORIAL */
+  .memorial-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg) 0%, #0d0000 50%, var(--bg) 100%);
+  }
+  .memorial-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 40px 0;
+  }
+  .memorial-candle {
+    width: 60px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .memorial-flame {
+    width: 12px;
+    height: 16px;
+    background: radial-gradient(ellipse at center bottom, #fbbf24 0%, #f59e0b 40%, #dc2626 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 1.5s ease-in-out infinite alternate;
+    margin-bottom: 2px;
+    box-shadow: 0 0 12px rgba(245,158,11,0.4);
+  }
+  @keyframes flicker {
+    0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+    100% { transform: scale(1.1, 0.95) rotate(2deg); opacity: 1; }
+  }
+  .memorial-body {
+    width: 10px;
+    height: 30px;
+    background: linear-gradient(180deg, #e5e5e5, #a3a3a3);
+    border-radius: 2px;
+  }
+  .memorial-message {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .memorial-message strong { color: var(--white); }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 100px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .cta-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 5vw, 44px);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cta-section p {
+    font-size: 17px;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: var(--red-light); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--gray-border);
+  }
+  .btn-secondary:hover { border-color: var(--red); color: var(--red-light); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--gray-border);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+  footer .footer-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    color: var(--red-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  footer .disclaimer {
+    font-size: 11px;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 16px auto 0;
+    opacity: 0.6;
+  }
+
+  /* FADE IN ANIMATION */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* SEQUENCE TABLE */
+  .seq-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .seq-table th {
+    text-align: left;
+    padding: 12px 16px;
+    background: var(--bg-elevated);
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-light);
+    border-bottom: 2px solid var(--gray-border);
+  }
+  .seq-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--gray-border);
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .seq-table td strong { color: var(--white); }
+  .seq-table tr:hover { background: rgba(220,38,38,0.03); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Black <span>Day</span></div>
+    <ul>
+      <li><a href="#origin">Origin</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#demands">Demands</a></li>
+      <li><a href="#people">People</a></li>
+      <li><a href="#violence">Violence</a></li>
+      <li><a href="#numbers">Numbers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-date">July 20, 2026 &nbsp;&bull;&nbsp; New Delhi, India</div>
+  <h1><span class="black">BLACK</span> <span class="day">DAY</span></h1>
+  <p class="hero-tagline">
+    When <strong>50,000 students</strong> marched to Parliament demanding accountability for a leaked exam, they were met with <strong>tear gas, lathi charges, and electrified barricades</strong>. This is the true story of the Sansad Chalo March.
+  </p>
+  <div class="hero-scroll">Scroll to uncover the truth &darr;</div>
+</div>
+
+<!-- ORIGIN -->
+<section id="origin" class="fade-in">
+  <div class="section-label">How It Began</div>
+  <h2 class="section-title">The Origin of CJP</h2>
+  <p class="section-subtitle">
+    A satirical youth movement born from a judge's insult, ignited by a leaked exam, and transformed into the largest student protest in a generation.
+  </p>
+
+  <div class="origin-grid">
+    <div class="origin-card">
+      <div class="icon">&#9881;</div>
+      <h3>The Spark</h3>
+      <p>
+        In May 2026, Chief Justice of India <strong style="color:#fff">Surya Kant</strong> called unemployed youth turning to journalism and activism "cockroaches" and "parasites of society." The remark went viral. Digital strategist <strong style="color:#fff">Abhijeet Dipke</strong>, a Boston University student, posted: <em>"What if all cockroaches come together?"</em> Millions responded.
+      </p>
+    </div>
+    <div class="origin-card">
+      <div class="icon">&#128221;</div>
+      <h3>The Trigger</h3>
+      <p>
+        The <strong style="color:#fff">2026 NEET-UG medical entrance exam paper was leaked</strong>, forcing cancellation. Re-exams were held, but trust was shattered. <strong style="color:#fff">~20 students died by suicide</strong> after the leak. Families had taken loans for coaching. Dreams were destroyed. The government refused to take accountability.
+      </p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">
+      "There are already parasites of society who attack the system... There are youngsters like cockroaches; they don't get any employment, and they don't have any place in a profession."
+    </div>
+    <div class="quote-author">— Chief Justice Surya Kant (May 2026)</div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">
+      "What if all cockroaches come together?"
+    </div>
+    <div class="quote-author">— Abhijeet Dipke, CJP Founder (16 May 2026)</div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="fade-in">
+  <div class="section-label">Hour by Hour</div>
+  <h2 class="section-title">Black Day Timeline</h2>
+  <p class="section-subtitle">
+    The complete sequence of events on July 20, 2026, from pre-dawn lockdown to the midnight reclaim. Every timestamp verified across NDTV, Indian Express, Deccan Herald, ETV Bharat, NBC/AP, The Hindu, and BBC.
+  </p>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+
+    <!-- ITEMS -->
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">4:00 AM</div><div class="time-label">Pre-Dawn</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag police">Security</span>
+        <div class="tl-title">Militarized Lockdown Begins</div>
+        <div class="tl-desc">5,000+ Delhi Police and paramilitary personnel deployed across New Delhi district. 25 CAPF battalions, anti-riot Vajra vehicles, water cannons positioned. Barricades welded shut at key intersections.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">Pre-Dawn</div><div class="time-label">Conspiracy</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag cjp">CJP Claim</span>
+        <div class="tl-title">Stone-Laden Truck Spotted at Jantar Mantar</div>
+        <div class="tl-desc">CJP founder Dipke posts photos of a truck loaded with stones and a wrecked van parked near the protest site. Alleges conspiracy to defame peaceful march. Warns of BJP/police infiltrators.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">7:00 AM</div><div class="time-label">Lockdown</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag police">Security</span>
+        <div class="tl-title">Parliament Gates Closed</div>
+        <div class="tl-desc">Section 163 BNSS prohibitory orders in effect. Assemblies of 5+ banned. Vehicle checks at all entry points to central Delhi. Key areas declared out of bounds.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">9:38 AM</div><div class="time-label">Metro Shutdown</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag police">Security</span>
+        <div class="tl-title">5 Metro Stations Closed</div>
+        <div class="tl-desc">DMRC shuts Rajiv Chowk, Janpath, Patel Chowk, Central Secretariat, and Seva Teerth stations. Thousands forced to walk to the protest site in heavy rain.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">9:45 AM</div><div class="time-label">Hospital Note</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag cjp">Wangchuk</span>
+        <div class="tl-title">"Let Me Join the March"</div>
+        <div class="tl-desc">Sonam Wangchuk's handwritten note from Safdarjung Hospital goes viral: "I am feeling very fine today. I request you to kindly allow me to leave the hospital so that I can join the march to Parliament."</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">9:50 AM</div><div class="time-label">Call to March</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag cjp">CJP</span>
+        <div class="tl-title">"Biggest March in India's History"</div>
+        <div class="tl-desc">Dipke declares: "The biggest march in India's history is about to take place. For the past 10-12 years, attempts have been made to destroy democracy." CJP issues instructions: bring national flag, Constitution, photos of Ambedkar/Gandhi/Bhagat Singh. No political party flags.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">10:00 AM</div><div class="time-label">Crowd Swells</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag cjp">Gathering</span>
+        <div class="tl-title">50,000+ Gather in the Rain</div>
+        <div class="tl-desc">Massive crowd assembles at Jantar Mantar. Delhi Police estimates 8,000. Ground reporters estimate far higher. Indian Express later confirms 50,000+. Gitanjali Angmo (Wangchuk's wife) leads the march in his place.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">11:00 AM</div><div class="time-label">First Tear Gas</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag violence">Violence</span>
+        <div class="tl-title">Tear Gas Shells Fired</div>
+        <div class="tl-desc">Protesters attempt to move towards Parliament via Sansad Marg. First tear gas shells fired near Parliament Street as crowd pushes against barricades.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">11:15 AM</div><div class="time-label">Lathi Charge</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag violence">Violence</span>
+        <div class="tl-title">Baton Charge Begins</div>
+        <div class="tl-desc">Delhi Police resorts to lathi charge after stone pelting (source disputed). Multiple rounds of tear gas across Jantar Mantar, Janpath, Parliament Street.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">11:25 AM</div><div class="time-label">Barricade Breach</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag violence">Clash</span>
+        <div class="tl-title">Protesters Reach Raisina Road</div>
+        <div class="tl-desc">Some protesters breach first layer of barricades, reaching Raisina Road, barely 200 metres from Parliament. Stopped by second wave of barricades and heavier tear gas.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">11:50 AM</div><div class="time-label">Talks Begin</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag political">Government</span>
+        <div class="tl-title">First-Ever Government Outreach</div>
+        <div class="tl-desc">CJP spokespersons Saurav Das and Ashutosh Ranka arrive at Health Minister JP Nadda's residence. First time the government engages directly with the movement. Discussions begin.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">12:00 PM</div><div class="time-label">Internet Cut</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag police">Blackout</span>
+        <div class="tl-title">Mobile Internet Shutdown</div>
+        <div class="tl-desc">Internet services cut in Parliament vicinity. Live streams, video uploads, and communication disrupted. Visuals from the ground slow to emerge.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">12:00 PM</div><div class="time-label">Detention</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag political">Opposition</span>
+        <div class="tl-title">MP Dimple Yadav Detained</div>
+        <div class="tl-desc">Samajwadi Party MP Dimple Yadav detained while marching alongside protesters. National Conference members head to Jantar Mantar in solidarity.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">1:00 PM</div><div class="time-label">Escalation</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag violence">Violence</span>
+        <div class="tl-title">Electrified Barricades Activated</div>
+        <div class="tl-desc">Protesters report electrified barricades delivering shocks. Multiple episodes of lathi charge. Protesters allege police personnel had no name tags, preventing accountability.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">2:00 PM</div><div class="time-label">Solidarity</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag political">Opposition</span>
+        <div class="tl-title">Rahul Gandhi, Revanth Reddy Speak Out</div>
+        <div class="tl-desc">Rahul Gandhi: "Tear-gassing and lathicharging students is neither democratic nor India's way." Telangana CM Revanth Reddy demands end to police brutality. Opposition plans to raise issue in both Houses.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">4:00 PM</div><div class="time-label">Demands Filed</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag political">Government</span>
+        <div class="tl-title">Written Memorandum Submitted to Nadda</div>
+        <div class="tl-desc">Three demands submitted in writing: (1) Release Sonam Wangchuk, (2) Resignation of Dharmendra Pradhan, (3) 1 crore compensation for NEET suicide victims' families. Nadda says he will "discuss at the appropriate level." No commitments.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">5:00 PM</div><div class="time-label">Site Cleared</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag police">Police</span>
+        <div class="tl-title">Protest Stage Dismantled</div>
+        <div class="tl-desc">Police dismantle the CJP protest stage at Jantar Mantar. Tents, structures, sound system removed. CJP leaders shift to sit-in near Kerala House.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">6:00 PM</div><div class="time-label">Allegations</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag cjp">CJP</span>
+        <div class="tl-title">"Excessive Force" Alleged</div>
+        <div class="tl-desc">CJP accuses police of using excessive force. Claims students injured, Gitanjali Angmo pushed around, a child hurt. "Won't move until Dharmendra Pradhan resigns."</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">7:00 PM</div><div class="time-label">Vandalism</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag violence">Violence</span>
+        <div class="tl-title">Police Vehicle Overturned</div>
+        <div class="tl-desc">A Delhi Police vehicle is vandalized and overturned near Janpath. Delhi Police holds high-level meeting to review law and order situation.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">9:30 PM</div><div class="time-label">Hospital</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag cjp">Wangchuk</span>
+        <div class="tl-title">"I Will Continue My Fast"</div>
+        <div class="tl-desc">From Safdarjung Hospital, Wangchuk announces he will continue his indefinite hunger strike until youth leaders are allowed to meet MPs at Sansad Bhawan, or MPs visit him at the hospital.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">10:40 PM</div><div class="time-label">Reclaim</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag cjp">CJP</span>
+        <div class="tl-title">Protesters Reclaim Dismantled Site</div>
+        <div class="tl-desc">Dipke and supporters return to the dismantled Jantar Mantar protest site. CJP alleges "brutal crackdown" is ongoing. The movement is not dying down. It is escalating.</div>
+      </div></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time"><div class="time-badge">11:00 PM</div><div class="time-label">Final Count</div></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><div class="tl-card">
+        <span class="tl-tag violence">Casualties</span>
+        <div class="tl-title">100+ Detained, 100+ Injured</div>
+        <div class="tl-desc">Final numbers: 50+ police personnel injured, 50+ protesters injured, 100+ detained. Delhi High Court declines urgent hearing on PIL challenging Wangchuk's removal. Asks police if Supreme Court surveillance guidelines are being followed.</div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEMANDS -->
+<section id="demands" class="fade-in">
+  <div class="section-label">What They Asked For</div>
+  <h2 class="section-title">The Three Demands</h2>
+  <p class="section-subtitle">
+    Submitted in writing to Health Minister JP Nadda at 4:00 PM. He responded with "will discuss at the appropriate level." Zero commitments. Zero demands met.
+  </p>
+
+  <div class="demands-grid">
+    <div class="demand-card">
+      <div class="demand-number">01</div>
+      <h3>Release Wangchuk</h3>
+      <p>Immediate release of Sonam Wangchuk from Safdarjung Hospital. No restrictions on his movement. Allow him to protest peacefully.</p>
+    </div>
+    <div class="demand-card">
+      <div class="demand-number">02</div>
+      <h3>Sack Pradhan</h3>
+      <p>Immediate resignation or sacking of Union Education Minister Dharmendra Pradhan for repeated exam paper leaks and systemic failure under his watch.</p>
+    </div>
+    <div class="demand-card">
+      <div class="demand-number">03</div>
+      <h3>1 Crore Compensation</h3>
+      <p>Rs 1 crore compensation for the families of every student who died by suicide after the NEET-UG paper leak destroyed their future.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section id="people" class="fade-in">
+  <div class="section-label">Key Figures</div>
+  <h2 class="section-title">The People</h2>
+  <p class="section-subtitle">
+    The leaders, the voices, and the figures who shaped the movement and the day.
+  </p>
+
+  <div class="people-grid">
+    <div class="person-card">
+      <div class="person-avatar">AD</div>
+      <div class="person-name">Abhijeet Dipke</div>
+      <div class="person-role">CJP Founder</div>
+      <div class="person-status">30-year-old Boston University student. Founded CJP on May 16, 2026. Led the march, ended his hunger strike at Wangchuk's request. Reclaimed the protest site by night.</div>
+      <span class="person-badge badge-active">Active Leader</span>
+    </div>
+
+    <div class="person-card">
+      <div class="person-avatar">SW</div>
+      <div class="person-name">Sonam Wangchuk</div>
+      <div class="person-role">Activist / Educationist</div>
+      <div class="person-status">Ladakhi engineer, inspiration for the film "3 Idiots." On hunger strike since June 28. Lost 9.1 kg in 19 days. Forcefully hospitalized July 18. Vows to continue fasting.</div>
+      <span class="person-badge badge-hunger">Hunger Strike — Day 23</span>
+    </div>
+
+    <div class="person-card">
+      <div class="person-avatar">GA</div>
+      <div class="person-name">Gitanjali Angmo</div>
+      <div class="person-role">Wangchuk's Wife / March Leader</div>
+      <div class="person-status">Led the Sansad Chalo march in her husband's place. Allegedly pushed and assaulted by police during the march. Continued sit-in at Kerala House.</div>
+      <span class="person-badge badge-active">Active</span>
+    </div>
+
+    <div class="person-card">
+      <div class="person-avatar">SD</div>
+      <div class="person-name">Saurav Das</div>
+      <div class="person-role">CJP Chief Spokesperson</div>
+      <div class="person-status">Met with JP Nadda from 12 noon to 4 PM. Submitted the written memorandum. "Protests will continue until demands are met."</div>
+      <span class="person-badge badge-active">Active</span>
+    </div>
+
+    <div class="person-card">
+      <div class="person-avatar">AR</div>
+      <div class="person-name">Ashutosh Ranka</div>
+      <div class="person-role">CJP Spokesperson</div>
+      <div class="person-status">Co-led the delegation to Nadda. Present at the sit-in near Kerala House through the evening.</div>
+      <span class="person-badge badge-active">Active</span>
+    </div>
+
+    <div class="person-card">
+      <div class="person-avatar">NB</div>
+      <div class="person-name">Neha Bora</div>
+      <div class="person-role">AISA National President</div>
+      <div class="person-status">Prominent face of the protest. On hunger strike alongside other student leaders. Pressing on despite deteriorating health.</div>
+      <span class="person-badge badge-hunger">Hunger Strike</span>
+    </div>
+
+    <div class="person-card">
+      <div class="person-avatar">DP</div>
+      <div class="person-name">Dharmendra Pradhan</div>
+      <div class="person-role">Union Education Minister</div>
+      <div class="person-status">The man whose resignation is the central demand. Called CJP protesters "the B-team of disruptive elements" who "do not have faith in the country's progress." Met Amit Shah in Parliament.</div>
+      <span class="person-badge badge-government">Government</span>
+    </div>
+
+    <div class="person-card">
+      <div class="person-avatar">JN</div>
+      <div class="person-name">JP Nadda</div>
+      <div class="person-role">Union Health Minister</div>
+      <div class="person-status">First government official to engage with CJP. Received demands, urged protesters to go home. Made zero commitments. Called it a "cordial atmosphere."</div>
+      <span class="person-badge badge-government">Government</span>
+    </div>
+  </div>
+</section>
+
+<!-- VIOLENCE ANALYSIS -->
+<section id="violence" class="fade-in">
+  <div class="section-label">The Contested Question</div>
+  <h2 class="section-title">Who Started the Violence?</h2>
+  <p class="section-subtitle">
+    Both sides have a narrative. The evidence is genuinely contested. Here is what the reporting actually shows, without picking a side.
+  </p>
+
+  <div class="violence-wrapper">
+    <!-- NARRATIVE A -->
+    <div class="violence-side">
+      <div class="violence-header">
+        <span class="violence-badge-a">Narrative A</span>
+        <h3>Delhi Police: "Protesters Started It"</h3>
+      </div>
+      <ul class="violence-list">
+        <li>Protesters attempted to <strong>breach barricades</strong> near Parliament Street at ~11:25 AM</li>
+        <li><strong>Stone pelting</strong> by CJP protesters triggered the lathi charge (police sources)</li>
+        <li>Protesters displayed <strong>"unruly, aggressive, violent"</strong> behaviour (official police statement)</li>
+        <li>Delhi Police vehicle <strong>vandalized and overturned</strong> near Janpath</li>
+        <li>The march was <strong>unauthorized</strong> from the start, Section 163 BNSS in effect</li>
+        <li><strong>50+ police personnel injured</strong> in the clashes</li>
+      </ul>
+    </div>
+
+    <!-- NARRATIVE B -->
+    <div class="violence-side">
+      <div class="violence-header">
+        <span class="violence-badge-b">Narrative B</span>
+        <h3>CJP: "Police Provoked / Pre-Planned It"</h3>
+      </div>
+      <ul class="violence-list">
+        <li><strong>Truck loaded with stones</strong> and a wrecked van photographed at Jantar Mantar <strong>before the march</strong> — Dipke posted it Sunday night</li>
+        <li>CJP publicly warned of <strong>BJP/police infiltrators</strong> planted to provoke violence</li>
+        <li><strong>5,000+ police, 25 CAPF battalions, electrified barricades</strong> deployed before a single protester moved</li>
+        <li>Police had <strong>no name tags</strong>, preventing identification and accountability</li>
+        <li>CJP explicitly instructed protesters to be <strong>peaceful</strong>: flags, Constitution, no weapons</li>
+        <li><strong>Gitanjali Angmo pushed</strong>, a child injured, stage dismantled — provocative acts</li>
+        <li>Mobile internet cut to <strong>suppress evidence</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SEQUENCE TABLE -->
+  <h3 style="font-family:'Oswald',sans-serif; font-size:22px; text-transform:uppercase; margin-top:48px; margin-bottom:8px;">The Sequence of Escalation</h3>
+  <p style="color:var(--text-dim); font-size:14px; margin-bottom:16px;">What the timeline actually shows, step by step.</p>
+  <table class="seq-table">
+    <thead>
+      <tr><th>Step</th><th>Who</th><th>What Happened</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Police</strong></td><td>5,000+ deployed, electrified barricades, metro shut, internet blackout — all before any march</td></tr>
+      <tr><td>2</td><td><strong>CJP</strong></td><td>Dipke posts photos of stone-laden truck, alleges conspiracy (Sunday night)</td></tr>
+      <tr><td>3</td><td><strong>CJP</strong></td><td>Issues peaceful protest instructions (flags, Constitution, no weapons)</td></tr>
+      <tr><td>4</td><td><strong>Crowd</strong></td><td>8,000–50,000 gather peacefully in heavy rain, no incidents</td></tr>
+      <tr><td>5</td><td><strong>Protesters</strong></td><td><strong>First barricade breach attempt</strong> at Parliament Street (~11:25 AM)</td></tr>
+      <tr><td>6</td><td><strong>Police</strong></td><td><strong>First lathi charge + tear gas</strong> in response (~11:25 AM)</td></tr>
+      <tr><td>7</td><td><strong>Both</strong></td><td>Stone pelting (source disputed) + repeated tear gas + lathicharge</td></tr>
+      <tr><td>8</td><td><strong>Some protesters</strong></td><td>Police vehicle overturned near Janpath</td></tr>
+      <tr><td>9</td><td><strong>Police</strong></td><td>Stage dismantled, structures cleared at Jantar Mantar</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ASSESSMENT -->
+  <div class="assessment-box">
+    <h3>Assessment</h3>
+    <p>
+      <strong>The state created the conditions for violence.</strong>
+    </p>
+    <p>
+      The stone truck allegation was made <strong>before the march started</strong>. If true, someone planted stones specifically to enable a "stone pelting" narrative. The police buildup was <strong>disproportionate and preemptive</strong>: 5,000+ personnel, electrified barricades, internet shutdown — all for a student protest. This is not crowd control. It is a show of force designed to provoke.
+    </p>
+    <p>
+      The march was <strong>peaceful until the barricade breach attempt at 11:25 AM</strong>. No violence was reported from 4 AM to 11:25 AM. The first use of force was police lathi charge after protesters tried to push past barricades.
+    </p>
+    <p>
+      However, the vehicle overturned near Janpath and 50+ injuries to police personnel suggest some protesters <strong>did</strong> engage in violence once clashes began. Whether these were genuine CJP supporters or infiltrators <strong>cannot be confirmed</strong> from available reporting.
+    </p>
+    <p style="color:var(--red-light); font-weight:600; font-size:17px; margin-top:24px;">
+      The most accurate summary: The state created a pressure cooker, then lit the match.
+    </p>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numbers" class="fade-in">
+  <div class="section-label">By the Numbers</div>
+  <h2 class="section-title">The Cost of July 20</h2>
+  <p class="section-subtitle">
+    The quantified impact of a single day of protest in the world's largest democracy.
+  </p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">50,000+</div>
+      <div class="stat-label">Protesters</div>
+      <div class="stat-sub">Indian Express estimate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">100+</div>
+      <div class="stat-label">Detained</div>
+      <div class="stat-sub">Delhi Police official</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">100+</div>
+      <div class="stat-label">Total Injured</div>
+      <div class="stat-sub">50+ police, 50+ protesters</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">5</div>
+      <div class="stat-label">Metro Stations Shut</div>
+      <div class="stat-sub">Rajiv Chowk, Janpath, +3</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">5,000+</div>
+      <div class="stat-label">Police Deployed</div>
+      <div class="stat-sub">+ 25 CAPF battalions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Demands Met</div>
+      <div class="stat-sub">After 5-hour Nadda meeting</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">~20</div>
+      <div class="stat-label">Student Suicides</div>
+      <div class="stat-sub">After NEET paper leak</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">23</div>
+      <div class="stat-label">Days of Hunger Strike</div>
+      <div class="stat-sub">Wangchuk, still ongoing</div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORIAL -->
+<div class="memorial-section fade-in">
+  <div class="section-label" style="text-align:center;">In Memory</div>
+  <h2 class="section-title" style="text-align:center;">The Students We Lost</h2>
+  <div class="memorial-wall" id="memorial-wall">
+    <!-- candles generated by JS -->
+  </div>
+  <p class="memorial-message">
+    "If we don't fight, who will? If we don't speak, who will?"
+    <br><br>
+    <strong>~20 students</strong> died by suicide after the NEET-UG paper leak destroyed their futures. They came from families who took loans for coaching. They believed in a system that failed them. <strong>They are the reason this movement exists.</strong>
+  </p>
+</div>
+
+<!-- CTA -->
+<div class="cta-section fade-in">
+  <h2>This Is Not the End.</h2>
+  <p>
+    July 20 was a Black Day. But the movement continues. Wangchuk's hunger strike continues. The sit-in continues. The demands remain unmet. The story is still being written.
+  </p>
+  <p>
+    <strong>Share this. Talk about this. Don't let them forget.</strong>
+  </p>
+  <div class="cta-buttons">
+    <a href="#timeline" class="btn btn-primary">Read the Full Timeline</a>
+    <a href="#origin" class="btn btn-secondary">Learn the Story</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Black Day &bull; July 20, 2026</div>
+  <p>This is an independent awareness project documenting the events of the CJP Sansad Chalo March.</p>
+  <p>All facts compiled from: NDTV, Indian Express, Deccan Herald, ETV Bharat, NBC News/AP, The Hindu, BBC News, Wikipedia, and DNA India.</p>
+  <p class="disclaimer">
+    This site is a journalistic documentation, not an official CJP publication. All sources are publicly available. Every effort has been made to present facts accurately and without bias. Where narratives conflict, both sides are presented. This is the true story as reported by India's leading news organizations and international press.
+  </p>
+  <p style="margin-top:16px; font-size:12px; color:var(--gray);">&copy; 2026 Black Day Project. For awareness. For truth. For the students.</p>
+</footer>
+
+<script>
+  // FADE IN ON SCROLL
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // MEMORIAL CANDLES (20 for ~20 students)
+  const wall = document.getElementById('memorial-wall');
+  for (let i = 0; i < 20; i++) {
+    const candle = document.createElement('div');
+    candle.className = 'memorial-candle';
+    candle.innerHTML = `
+      <div class="memorial-flame" style="animation-delay: ${(Math.random() * 1.5).toFixed(2)}s;"></div>
+      <div class="memorial-body"></div>
+    `;
+    candle.style.animationDelay = `${(Math.random() * 0.5).toFixed(2)}s`;
+    wall.appendChild(candle);
+  }
+
+  // SMOOTH SCROLL OFFSET FOR NAV
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
