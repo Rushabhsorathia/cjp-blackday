@@ -92,6 +92,20 @@
     transition: color 0.3s;
   }
   nav ul li a:hover { color: var(--red-light); }
+  nav ul li a.nav-highlight {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  nav ul li a.nav-highlight:hover {
+    background: var(--red-light);
+    color: var(--white) !important;
+  }
   .nav-mobile-toggle {
     display: none;
     background: transparent;
@@ -1194,6 +1208,7 @@
       <li><a href="#people">People</a></li>
       <li><a href="#violence">Violence</a></li>
       <li><a href="#numbers">Numbers</a></li>
+      <li><a href="INDIA-DARK-DECADE-2014-2026.html" target="_blank" class="nav-highlight">India Dark</a></li>
     </ul>
   </div>
 </nav>
@@ -1777,6 +1792,7 @@
   <div class="cta-buttons">
     <a href="#timeline" class="btn btn-primary">Read the Full Timeline</a>
     <a href="#origin" class="btn btn-secondary">Learn the Story</a>
+    <a href="INDIA-DARK-DECADE-2014-2026.html" class="btn btn-secondary" target="_blank">India Dark Decade (Full Report)</a>
   </div>
 </div>
 
@@ -1847,11 +1863,14 @@
     wall.appendChild(candle);
   }
 
-  // SMOOTH SCROLL OFFSET FOR NAV
+  // SMOOTH SCROLL OFFSET FOR NAV (only for in-page anchors; let real links through)
   document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href') || '';
+      // Only intercept in-page anchors (#section); let http/https/mailto/file links work normally
+      if (!href.startsWith('#')) return;
       e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
+      const target = document.querySelector(href);
       if (target) {
         window.scrollTo({
           top: target.offsetTop - 70,

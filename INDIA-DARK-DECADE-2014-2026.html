@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>India Dark Decade 2014-2026 — The Blunders Nobody Talks About</title>
+<meta name="description" content="The complete documented record of India's economic blunders, democratic decline, crony capitalism, and human rights violations under the Modi government 2014-2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #141414;
+    --bg-elevated: #1a1a1a;
+    --red: #dc2626;
+    --red-dark: #991b1b;
+    --red-light: #ef4444;
+    --amber: #f59e0b;
+    --gray: #6b7280;
+    --gray-light: #9ca3af;
+    --gray-border: #2a2a2a;
+    --text: #f3f4f6;
+    --text-dim: #9ca3af;
+    --white: #ffffff;
+    --green: #10b981;
+    --blue: #3b82f6;
+    --purple: #a855f7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--red-dark); border-radius: 3px; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-border);
+    z-index: 1000;
+    padding: 12px 0;
+  }
+  nav .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+  }
+  nav .logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--red-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  nav .logo span { color: var(--text); }
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+  }
+  nav ul li a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+  nav ul li a:hover { color: var(--red-light); }
+  nav ul li a.back-link {
+    color: var(--red-light);
+    border: 1px solid var(--red-dark);
+    padding: 6px 14px;
+    border-radius: 4px;
+  }
+  nav ul li a.back-link:hover {
+    background: var(--red);
+    color: var(--white);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 120px 24px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero .label {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .hero h1 .dark { color: var(--white); }
+  .hero h1 .red { color: var(--red-light); }
+  .hero .sub {
+    font-size: 16px;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+  .hero .source-line {
+    font-size: 12px;
+    color: var(--gray);
+    font-style: italic;
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 24px 80px;
+  }
+
+  /* PART HEADERS */
+  .part-header {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-left: 4px solid var(--red);
+    border-radius: 0 8px 8px 0;
+    padding: 24px 30px;
+    margin: 40px 0 20px;
+  }
+  .part-header .part-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red-light);
+    margin-bottom: 6px;
+  }
+  .part-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .part-header p {
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    margin: 36px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-border);
+  }
+  .section-header h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--amber);
+    margin-bottom: 4px;
+  }
+  .section-header p {
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  /* TEXT */
+  p {
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  p strong { color: var(--white); font-weight: 600; }
+  p em { color: var(--text-dim); font-style: italic; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin: 20px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 500px;
+  }
+  thead th {
+    background: var(--red-dark);
+    color: var(--white);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+  }
+  tbody tr:nth-child(even) { background: var(--bg-card); }
+  tbody tr:nth-child(odd) { background: var(--bg-elevated); }
+  td {
+    padding: 10px 14px;
+    color: var(--text);
+    border-bottom: 1px solid var(--gray-border);
+    vertical-align: top;
+  }
+  td strong { color: var(--white); }
+  td .number { color: var(--red-light); font-weight: 700; }
+  td .sub { color: var(--gray-light); font-size: 12px; }
+
+  /* CALLOUT BOX */
+  .callout {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-border);
+    border-left: 3px solid var(--red);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout.red { border-left-color: var(--red); }
+  .callout.amber { border-left-color: var(--amber); }
+  .callout.blue { border-left-color: var(--blue); }
+  .callout p { margin-bottom: 0; font-size: 14px; }
+
+  /* BULLET LISTS */
+  ul, ol {
+    padding-left: 20px;
+    margin: 12px 0 16px;
+  }
+  li {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+  li strong { color: var(--white); }
+  li em { color: var(--gray-light); }
+
+  /* SECTION DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-border);
+    margin: 40px 0;
+  }
+
+  /* FOOTER SUMMARY */
+  .summary-section {
+    background: var(--bg-card);
+    border: 2px solid var(--red-dark);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 40px 0;
+  }
+  .summary-section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--red-light);
+    margin-bottom: 16px;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .summary-item {
+    background: var(--bg-elevated);
+    border: 1px solid var(--gray-border);
+    padding: 12px 16px;
+    border-radius: 6px;
+  }
+  .summary-item .cat {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    margin-bottom: 4px;
+  }
+  .summary-item .num {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--red-light);
+    font-family: 'Oswald', sans-serif;
+  }
+  .summary-item .desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 24px 60px;
+    border-top: 1px solid var(--gray-border);
+    text-align: center;
+  }
+  footer p { font-size: 12px; color: var(--gray); margin-bottom: 6px; }
+  footer .source { font-size: 11px; color: var(--gray); margin-top: 16px; }
+
+  /* BACK TO TOP */
+  .back-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--red);
+    color: var(--white);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: background 0.3s;
+    z-index: 100;
+  }
+  .back-top:hover { background: var(--red-light); color: var(--white); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav ul { display: none; gap: 0; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.98); border-bottom: 1px solid var(--gray-border); padding: 12px 24px; }
+    nav ul.open { display: flex; }
+    nav ul li { margin-bottom: 8px; }
+    .hero { padding: 100px 16px 40px; }
+    .hero h1 { font-size: clamp(28px, 10vw, 48px); }
+    .content { padding: 16px 16px 60px; }
+    .part-header { padding: 16px 20px; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .table-wrap { font-size: 12px; }
+  }
+  @media (max-width: 480px) {
+    nav .logo { font-size: 14px; }
+    table { font-size: 11px; }
+    td, thead th { padding: 8px 10px; }
+  }
+
+  /* Fade-in animation */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+  .fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">India <span>Dark Decade</span></div>
+    <ul id="navMenu">
+      <li><a href="index.html">Back to Black Day</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero fade-in">
+  <div class="label">Documented Evidence</div>
+  <h1><span class="dark">INDIA'S</span> <span class="red">DARK DECADE</span></h1>
+  <p class="sub">The Blunders, Failures, Corruption & Democratic Decline Nobody Talks About</p>
+  <p class="sub">2014 &mdash; 2026 &nbsp;&bull;&nbsp; Compiled July 21, 2026</p>
+  <p class="source-line">Sources: RBI, NCRB, NSSO/PLFS, CMIE, WHO, HRW, Amnesty International, ADR, PRS Legislative Research, World Inequality Lab, Oxfam, Reuters, BBC, The Guardian, NYT, Al Jazeera, Hindenburg Research, SC Observer India, Frontline, NDTV</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- ===== PART 1: ECONOMIC BLUNDERS ===== -->
+<div class="part-header fade-in">
+  <div class="part-num">Part 01</div>
+  <h2>Economic Blunders</h2>
+  <p>From demonetization to FDI collapse &mdash; the numbers that expose the economic destruction.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.1 &mdash; Demonetization (Nov 8, 2016)</h3>
+  <p>The biggest self-inflicted wound in Indian economic history.</p>
+</div>
+
+<p><strong>The Stated Purpose vs Reality:</strong></p>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Claim</th><th>Reality</th></tr></thead>
+<tbody>
+<tr><td>"Wipe out black money"</td><td><span class="number">99.3% of money returned</span> to banks (RBI Annual Report 2018)</td></tr>
+<tr><td>"Stop terrorism funding"</td><td>No evidence of reduction</td></tr>
+<tr><td>"Move to digital economy"</td><td>Cash in circulation increased after</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout red fade-in">
+<p><strong>Human Cost:</strong> 82+ deaths linked to queues &amp; cash shortages. 1.5 million jobs lost. Employment rate crashed from 42.59% to 41.45%. 40% job losses in age 40-55 segment.</p>
+</div>
+
+<div class="callout red fade-in">
+<p><strong>Economic Cost:</strong> 1.5-2 percentage point GDP loss. Industrial production declined 20-30%. IMF lowered growth estimate by 1 full percentage point. Sensex fell 6%+ the day after announcement.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.2 &mdash; GST Chaos (July 1, 2017)</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>230,000+ small businesses shut down</strong> due to GST compliance burden</li>
+  <li>Multiple tax slabs (0%, 5%, 12%, 18%, 28%) &mdash; opposite of "One Nation, One Tax"</li>
+  <li>GST Council met <strong>50+ times</strong> in first few years to fix broken rates</li>
+  <li>Combined with demonetization, GST <strong>"wrecked India's small traders"</strong></li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>1.3 &mdash; Banking Scams</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Fraudster</th><th>Amount Looted</th><th>Bank</th><th>Fled To</th></tr></thead>
+<tbody>
+<tr><td><strong>Nirav Modi</strong></td><td><span class="number">₹14,357 crore</span></td><td>Punjab National Bank</td><td>UK (arrested)</td></tr>
+<tr><td><strong>Mehul Choksi</strong></td><td>₹7,000+ crore</td><td>PNB/Gitanjali Gems</td><td>Antigua</td></tr>
+<tr><td><strong>Vijay Mallya</strong></td><td>₹9,000 crore</td><td>Multiple banks</td><td>UK</td></tr>
+<tr><td><strong>ABG Shipyard</strong></td><td><span class="number">₹22,842 crore</span></td><td>ICICI, SBI, others</td><td>India (biggest ever)</td></tr>
+<tr><td><strong>Rotomac</strong></td><td>₹3,695 crore</td><td>Bank of Baroda</td><td>India</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout red fade-in">
+<p><strong>Bigger Picture:</strong> Banks reported ₹5.35 lakh crore in frauds over ~7.5 years. PSB GNPAs hit <span class="number">₹8.96 lakh crore</span> (March 2018). Gross NPA ratio went from ~2% in 2008 to <strong>over 10% by 2018</strong>.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.4 &mdash; Unemployment Crisis</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>Figure</th><th>Context</th></tr></thead>
+<tbody>
+<tr><td>Overall unemployment (2017-18)</td><td><span class="number">6.1%</span></td><td>Highest since 1972-73 (45-year high)</td></tr>
+<tr><td>Previous rate (2011-12)</td><td>2.2%</td><td>Nearly tripled</td></tr>
+<tr><td>Youth unemployment (15-29)</td><td><span class="number">13-27%</span></td><td>Described as "astronomically high"</td></tr>
+<tr><td>Youth unemployment (CMIE 2022-23)</td><td><span class="number">45.4%</span></td><td>6x the overall rate</td></tr>
+<tr><td>Jobs lost (2016-17)</td><td><span class="number">1.5 million</span></td><td>CMIE data</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout amber fade-in">
+<p><strong>Government Cover-Up:</strong> The NSSO report was withheld. Two National Statistical Commission members resigned in protest (PC Mohanan, JV Meenakshi). Report leaked by Business Standard a day before the interim Budget.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.5 &mdash; Inflation &mdash; The Silent Tax</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Fuel</th><th>2014 Price</th><th>Peak Price</th><th>Increase</th></tr></thead>
+<tbody>
+<tr><td>Petrol (Delhi)</td><td>~₹71/litre</td><td><span class="number">₹110+/litre</span></td><td>55%+</td></tr>
+<tr><td>Diesel (Delhi)</td><td>~₹57/litre</td><td><span class="number">₹101/litre</span></td><td>78%+</td></tr>
+<tr><td>LPG Cylinder</td><td>~₹410</td><td><span class="number">₹1,000+</span></td><td>143%+</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout red fade-in">
+<p><strong>Excise Duty Loot:</strong> Central excise on petrol: ₹9.48 &rarr; ₹32.9/litre (+247%). On diesel: ₹3.56 &rarr; ₹31.8/litre (+793%). During COVID (April 2020), when global crude crashed 69%, government raised excise by ₹10 (petrol) and ₹13 (diesel).</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.6 &mdash; Farmer Crisis</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>BJP 2014 manifesto promised MSP at C2+50%</strong> (50% profit over cost) &mdash; government implemented A2+FL (cheaper formula) instead</li>
+  <li><strong>No legal MSP guarantee enacted</strong> as of 2026</li>
+  <li><strong>10,281 farmers/farm labourers died by suicide in 2022 alone</strong> &mdash; roughly one every hour</li>
+  <li><strong>Over 112,000 farmer suicides</strong> in the ~10-year period 2014-2022</li>
+  <li><strong>726-750 farmers died</strong> during the 13-month protest (Nov 2020 &ndash; Nov 2021)</li>
+  <li>At least 9 farmer suicides during the farm law protest</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>1.7 &mdash; GDP Manipulation</h3>
+</div>
+<div class="callout red fade-in">
+<p><strong>Arvind Subramanian</strong> (former Chief Economic Advisor to Modi government): India's GDP growth overstated by ~2.5 percentage points. Real growth 2012-2017: ~4.5%, not the official ~7%. 2026 update (PIIE): actual growth might be ~3%.</p>
+</div>
+<div class="callout amber fade-in">
+<p><strong>Ashoka Mody</strong> (Princeton/World Bank/IMF): India's realistic growth is ~4.5%. The headline 7-8% rests on "statistical sleight-of-hand." Manufacturing data, FDI collapse, and employment figures all contradict the narrative.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.8 &mdash; Rising Inequality</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>Figure</th><th>Context</th></tr></thead>
+<tbody>
+<tr><td>Top 1% income share (2022-23)</td><td><span class="number">22.6%</span></td><td>Highest since 1922</td></tr>
+<tr><td>Top 1% wealth share (2022-23)</td><td><span class="number">40.1%</span></td><td>Highest since 1961</td></tr>
+<tr><td>Top 10% wealth share</td><td><span class="number">77.4%</span></td><td>(Oxfam)</td></tr>
+<tr><td>Bottom 50% income share</td><td>15%</td><td>Of all national income</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.9 &mdash; Make in India Failure</h3>
+</div>
+<div class="callout red fade-in">
+<p>Manufacturing share of GDP: <strong>16.7% (2013-14) &rarr; 15.9% (2023-24)</strong> &mdash; a DECLINE. Target was 25%. PLI scheme launched March 2020 "barely moved the needle." Government quietly let it lapse in early 2025.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>1.10 &mdash; Rupee Collapse</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Date</th><th>USD/INR</th><th>Context</th></tr></thead>
+<tbody>
+<tr><td>May 2014</td><td><strong>₹59.44</strong></td><td>Modi takes office</td></tr>
+<tr><td>2022</td><td>₹81-82</td><td></td></tr>
+<tr><td>March 2026</td><td><span class="number">₹99.82</span></td><td>All-time low</td></tr>
+<tr><td>July 2026</td><td><span class="number">₹96.57</span></td><td>Current</td></tr>
+</tbody>
+</table>
+</div>
+<p class="fade-in"><strong>Total depreciation: ~63%</strong> from ₹59 in 2014 to ~₹97 in 2026. Rupee weakened <strong>11.95%</strong> in the last 12 months alone.</p>
+
+<div class="section-header fade-in">
+  <h3>1.11 &mdash; FDI Collapse</h3>
+</div>
+<div class="callout red fade-in">
+<p><strong>Net FDI fell to just $353 million</strong> in FY 2024-25 &mdash; one-seventh of the previous lowest in 25 years. Peak net FDI was $44 billion (2020-21). India's share in global FDI: peaked at 6.5% (2020) &rarr; crashed to 2.1% (2023). Mauritius (population 1.3 million) remains India's #1 "foreign" investor (25% of inflows) &mdash; widely suspected to be round-tripped black money.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ===== PART 2: DEMOCRATIC DECLINE ===== -->
+<div class="part-header fade-in">
+  <div class="part-num">Part 02</div>
+  <h2>Democratic Decline</h2>
+  <p>ED weaponization, Electoral Bonds scam, CJI controversies, press freedom destruction &mdash; the systematic capture of Indian institutions.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>2.1 &mdash; ED Weaponization</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>UPA Era (2004-14)</th><th>NDA Era (2014-24)</th><th>Increase</th></tr></thead>
+<tbody>
+<tr><td>Searches/Raids</td><td>112</td><td><span class="number">7,300</span></td><td><span class="number">8,590%</span></td></tr>
+<tr><td>Arrests (PMLA)</td><td>29</td><td><span class="number">755</span></td><td><span class="number">2,500%</span></td></tr>
+<tr><td>Cases registered</td><td>1,797</td><td><span class="number">5,297</span></td><td>195%</td></tr>
+<tr><td>Assets attached</td><td>₹5,086 crore</td><td>₹1.2 lakh crore</td><td>2,258%</td></tr>
+<tr><td>Conviction rate</td><td>&mdash;</td><td><span class="number">0.7%</span></td><td>Of all cases</td></tr>
+<tr><td>Cases reaching trial</td><td>&mdash;</td><td><span class="number">0.9%</span></td><td>47 of 5,297</td></tr>
+<tr><td>Opposition targeted</td><td>&mdash;</td><td><span class="number">98%</span></td><td>Of all political cases</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-header fade-in">
+  <h3>2.2 &mdash; Opposition Leaders Jailed</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>Arvind Kejriwal (Delhi CM):</strong> Arrested March 21, 2024 by ED &mdash; first sitting CM arrested by ED. Spent 156 days in jail while serving as CM. Arrested weeks before 2024 elections. <strong>Later DISCHARGED of all charges</strong> &mdash; entire case collapsed.</li>
+  <li><strong>Manish Sisodia (Delhi Deputy CM):</strong> Arrested Feb 26, 2023. Spent ~530 days (17 months) in custody. <strong>Later DISCHARGED/acquitted</strong> &mdash; charges collapsed.</li>
+  <li><strong>Hemant Soren (Jharkhand CM):</strong> Arrested Jan 31, 2024 by ED. Resigned before arrest. Later re-elected after winning legal battles.</li>
+</ul>
+<div class="callout amber fade-in">
+<p><strong>The Pattern:</strong> Three opposition Chief Ministers arrested during election season. The cases collapsed. Lives and careers destroyed. Democracy subverted. Join BJP &rarr; case dropped ("washing machine").</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>2.3 &mdash; Electoral Bonds Scam</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>Figure</th></tr></thead>
+<tbody>
+<tr><td>Total bonds purchased (2018-2024)</td><td><span class="number">₹12,769 crore</span></td></tr>
+<tr><td>BJP received</td><td><span class="number">₹6,060 crore (47.5%)</span></td></tr>
+<tr><td>Congress received</td><td>~₹1,400 crore (11%)</td></tr>
+<tr><td>BJP vs Congress ratio</td><td><span class="number">12x more</span></td></tr>
+<tr><td>Companies purchasing bonds</td><td>~1,300 entities</td></tr>
+<tr><td>Donors under ED/CBI investigation</td><td>Many &mdash; quid pro quo pattern</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout red fade-in">
+<p><strong>Feb 15, 2024:</strong> Supreme Court struck down Electoral Bonds as unconstitutional &mdash; violated Article 19(1)(a). Despite this, Modi defended the scheme. Post-bonds, BJP still received ₹6,088 crore in FY 2024-25 &mdash; 171% surge. BJP still ~12x more than Congress.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>2.4 &mdash; Election Commission Capture</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>~6 crore (60 million) voter names deleted</strong> in first year of Special Intensive Revision</li>
+  <li><strong>84,000+ electors deleted</strong> under "others" category alone</li>
+  <li><strong>March 2023:</strong> SC ruled CEC/EC appointments should include CJI on selection panel</li>
+  <li><strong>August 2023:</strong> Modi government passed law removing CJI &mdash; new panel: PM + Cabinet Minister + Leader of Opposition &mdash; ruling party gets <strong>built-in 2-1 majority</strong></li>
+  <li><strong>March 9, 2024:</strong> Election Commissioner Arun Goel resigned weeks before 2024 elections &mdash; reduced ECI to one-man commission</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>2.5 &mdash; Judiciary Compromised</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>CJI</th><th>Year</th><th>Controversy</th></tr></thead>
+<tbody>
+<tr><td><strong>Dipak Misra</strong></td><td>2017-18</td><td>4 senior judges held unprecedented press conference (Jan 2018) warning democracy under threat. Concerns: allocation of sensitive cases to preferred benches.</td></tr>
+<tr><td><strong>Ranjan Gogoi</strong></td><td>2018-19</td><td>Former assistant alleged sexual harassment. Gogoi convened bench with himself to dismiss allegations. Complainant arrested. <strong>Rewarded with Rajya Sabha nomination</strong> by Modi (March 2020).</td></tr>
+<tr><td><strong>Surya Kant</strong></td><td>2025-26</td><td>Compared unemployed youth to <strong>"cockroaches"</strong> and "parasites" in open court (May 2026). Triggered CJP movement. Led to July 20 Sansad Chalo march.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-header fade-in">
+  <h3>2.6 &mdash; Pegasus Spyware</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>300+ Indian citizens</strong> on Pegasus surveillance list (2021 Pegasus Project)</li>
+  <li>Targets included: <strong>Rahul Gandhi</strong>, <strong>Alok Verma</strong> (CBI Director), Election Commissioners, Supreme Court judges, journalists (The Wire), activists</li>
+  <li>Government refused to cooperate with SC investigation &mdash; did not file affidavit confirming or denying use</li>
+  <li>Committee found malware on 5 of 29 devices &mdash; report not made fully public</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>2.7 &mdash; UAPA Misuse</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>Figure</th></tr></thead>
+<tbody>
+<tr><td>People arrested (2014-2020)</td><td><span class="number">10,552</span></td></tr>
+<tr><td>Cases registered (2016-2020)</td><td>5,027</td></tr>
+<tr><td>Conviction rate</td><td><span class="number">~2%</span></td></tr>
+<tr><td>Muslims charged (Article-14 study)</td><td><span class="number">84.6%</span></td><td>Of 925 individuals</td></tr>
+<tr><td>Father Stan Swamy</td><td>Died in custody July 5, 2021</td><td>84-year-old tribal activist, no trial</td></tr>
+<tr><td>Umar Khalid</td><td><span class="number">6 years</span></td><td>In jail without trial (since Jan 2020)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-header fade-in">
+  <h3>2.8 &mdash; CBI Director Midnight Coup</h3>
+</div>
+<div class="callout red fade-in">
+<p><strong>Oct 23, 2018 (~1:00 AM):</strong> Modi government invoked obscure rule to send CBI Director Alok Verma on forced leave &mdash; called a "midnight coup." <strong>Jan 8, 2019:</strong> SC reinstated Verma &mdash; ruled midnight removal illegal. <strong>Jan 10, 2019:</strong> Just 48 hours later, PM Modi-led committee voted 2-1 to permanently remove Verma. CJI (Ranjan Gogoi) voted with PM. Verma was later listed as a Pegasus surveillance target.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>2.9 &mdash; NGO Crackdown</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>~20,000-22,000 NGOs lost FCRA licences</strong> since 2014</li>
+  <li><strong>Amnesty International India:</strong> Accounts frozen Sept 2020 &mdash; halted all operations &mdash; called it a "witch-hunt"</li>
+  <li><strong>Oxfam India:</strong> FCRA licence denied Jan 2022; revision rejected Dec 2022</li>
+  <li><strong>Greenpeace India, Compassion International, Ford Foundation</strong> &mdash; all targeted</li>
+  <li>FCRA Amendments 2020: reduced admin expense cap from 50% to 20%, prohibited sub-granting, made Aadhaar mandatory &mdash; effectively crippled civil society</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>2.10 &mdash; Parliamentary Death</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>Figure</th></tr></thead>
+<tbody>
+<tr><td>17th Lok Sabha sittings (avg/year)</td><td><span class="number">55 days</span></td><td>Fewest ever (PRS)</td></tr>
+<tr><td>Bills passed with &lt;1 hour debate</td><td><span class="number">20 of 22</span></td><td>Monsoon 2023</td></tr>
+<tr><td>Bills referred to committees</td><td><span class="number">16%</span></td><td>Down from ~60-71%</td></tr>
+<tr><td>MPs suspended (Dec 2023)</td><td><span class="number">141</span></td><td>Largest mass suspension ever</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- ===== PART 3: MODI FOREIGN TRIPS + ADANI/AMBANI ===== -->
+<div class="part-header fade-in">
+  <div class="part-num">Part 03</div>
+  <h2>Modi Foreign Trips &amp; Adani/Ambani Deals</h2>
+  <p>The crony capitalism map: every country Modi visited, every deal that followed.</p>
+</div>
+
+<div class="callout red fade-in">
+<p><strong>Adani Wealth Growth:</strong> $4.5 billion (March 2014) &rarr; ~$150 billion (Sept 2022 peak) &rarr; ~$92.6 billion (2026). That's a <strong>~1,956% increase</strong> during Modi's tenure. Adani and Ambani signed at least <strong>18 deals</strong> accompanying Modi on foreign trips.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>3.1 &mdash; Country-by-Country Deal Map</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Country</th><th>Modi Visit</th><th>Adani/Ambani Deal</th><th>Amount</th></tr></thead>
+<tbody>
+<tr><td><strong>Sri Lanka</strong></td><td>Multiple visits</td><td>Modi personally pressured President Rajapaksa to award wind project to Adani. CEB Chairman testified under oath. Later retracted under pressure and resigned. Deal scrapped by new Sri Lankan government (2025).</td><td>$442 million</td></tr>
+<tr><td><strong>Bangladesh</strong></td><td>June 2015</td><td>1,600 MW coal power plant in Godda, Jharkhand &mdash; dedicated to exporting power to Bangladesh. Bangladesh forced to buy at inflated prices (2x market rate). Bangladesh formally requested price revision in 2024.</td><td>&mdash;</td></tr>
+<tr><td><strong>Israel</strong></td><td>2017</td><td>Adani-led consortium acquired Haifa Port (Israel's 2nd largest). Involvement in assembling Tavor assault rifles and Hermes drones used in Gaza conflict.</td><td>$1.2 billion</td></tr>
+<tr><td><strong>Australia</strong></td><td>2014+</td><td>Carmichael coal mine in Queensland &mdash; massive environmental damage to Great Barrier Reef. Multiple banks refused. Project proceeded anyway.</td><td>&mdash;</td></tr>
+<tr><td><strong>Tanzania</strong></td><td>July 2016</td><td>Pursued Dar es Salaam port and container terminals. Strategic Indian Ocean location.</td><td>&mdash;</td></tr>
+<tr><td><strong>Myanmar</strong></td><td>&mdash;</td><td>Adani Group hosted Myanmar's General Min Aung Hlaing at Mundra &mdash; the General was under international sanctions for genocide. Pursued Yangon port deal after the military coup.</td><td>&mdash;</td></tr>
+<tr><td><strong>Kenya</strong></td><td>&mdash;</td><td>$736 million transmission lines deal suspended by Kenya High Court amid corruption allegations. Whistleblower Nelson Amenya received death threats.</td><td>$736 million</td></tr>
+<tr><td><strong>Russia</strong></td><td>Dec 2015</td><td>Anil Ambani's Reliance Defence signed manufacturing/maintenance deal with Russia's Almaz-Antey.</td><td>$6 billion (potential)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-header fade-in">
+  <h3>3.2 &mdash; The Rafale Deal</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>UPA Deal (126 jets)</th><th>Modi Deal (36 jets)</th></tr></thead>
+<tbody>
+<tr><td>Per aircraft cost</td><td>₹526 crore</td><td><span class="number">₹1,570 crore</span></td></tr>
+<tr><td>Manufacturer</td><td>HAL (state-owned)</td><td>Reliance Defence (Anil Ambani)</td></tr>
+<tr><td>Manufacturing in India</td><td>Yes</td><td>No</td></tr>
+<tr><td>Offset partner experience</td><td>&mdash;</td><td>Zero defense experience, massive debt</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout red fade-in">
+<p><strong>April 10, 2015:</strong> Modi announced 36 Rafale purchase in Paris &mdash; bypassing standard procurement. Anil Ambani was present in the delegation. Dassault chose Reliance because it "had land near airport." French President Hollande later said India proposed Reliance as the partner. June 2021: French judge opened corruption investigation. Indian government stonewalled it.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>3.3 &mdash; Hindenburg Bombshell (Jan 24, 2023)</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>Hindenburg Research</strong> published 2-year investigation accusing Adani of "the largest con in corporate history"</li>
+  <li>Allegations: <strong>brazen stock manipulation, accounting fraud, money laundering</strong></li>
+  <li>Revealed offshore shell companies in Mauritius, Caribbean tax havens</li>
+  <li><strong>$150+ billion wiped</strong> from Adani Group market value in weeks</li>
+  <li>Adani Enterprises cancelled its ₹20,000 crore FPO (completed just the day before the report)</li>
+  <li><strong>SEBI dismissed</strong> Hindenburg allegations (Sept 2025) &mdash; Hindenburg denied. SEBI chief accused of conflicts of interest (investments in Adani-linked offshore funds)</li>
+  <li><strong>November 2024:</strong> US DOJ charged Adani and executives with paying $250+ million in bribes to Indian officials to win solar power contracts</li>
+</ul>
+
+<hr class="divider">
+
+<!-- ===== PART 4: SOCIAL CATASTROPHES ===== -->
+<div class="part-header fade-in">
+  <div class="part-num">Part 04</div>
+  <h2>Social Catastrophes &amp; Human Cost</h2>
+  <p>The dead, the displaced, the silenced &mdash; the human cost of Modi's governance.</p>
+</div>
+
+<div class="section-header fade-in">
+  <h3>4.1 &mdash; Manipur Crisis (May 2023-Present)</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>260+ killed</strong> (Crisis Group)</li>
+  <li><strong>60,000+ displaced</strong> into relief camps</li>
+  <li><strong>4,786 weapons looted</strong> from police armories</li>
+  <li>Hundreds of churches and homes destroyed &mdash; complete ethnic cleansing</li>
+  <li><strong>Viral video (July 19, 2023):</strong> Two Kuki-Zo women paraded naked and sexually assaulted (incident from May 4 &mdash; suppressed for 2 months)</li>
+  <li><strong>20-year-old gang rape survivor died January 2026</strong> without seeing justice. Amnesty: "devastating indictment of the Indian state's continuing failure"</li>
+  <li><strong>Modi did not address crisis for ~80 days</strong> &mdash; never visited Manipur throughout</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>4.2 &mdash; Cow Vigilante Lynchings</h3>
+</div>
+<div class="callout red fade-in">
+<p><strong>May 2015 - Dec 2018:</strong> At least <strong>44 killed</strong>, 36 of them Muslims (82%). ~280 injured in 100+ incidents across 20 states. 90% of attacks occurred after BJP came to power. 66% in BJP-ruled states. Muslims were victims in 62% of cases.</p>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Victim</th><th>Date</th><th>Circumstance</th></tr></thead>
+<tbody>
+<tr><td><strong>Mohammad Akhlaq</strong> (52)</td><td>Sept 2015</td><td>Dadri, UP &mdash; lynched over cow rumor. BJP minister called it "an accident."</td></tr>
+<tr><td><strong>Pehlu Khan</strong> (55)</td><td>April 2017</td><td>Alwar, Rajasthan &mdash; dairy farmer beaten by 200 vigilantes. Police filed cases against the VICTIM.</td></tr>
+<tr><td><strong>Tabrez Ansari</strong> (24)</td><td>June 2019</td><td>Dhanbad &mdash; tied to pole, beaten for hours, forced to chant "Jai Shri Ram." Died 4 days later.</td></tr>
+<tr><td><strong>Junaid (16) & Nasir (25)</strong></td><td>Feb 2023</td><td>Bhiwani, Haryana &mdash; abducted and burned alive.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-header fade-in">
+  <h3>4.3 &mdash; Delhi 2020 Riots</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>53 killed</strong> (36 Muslims, 15 Hindus)</li>
+  <li><strong>200+ injured</strong>, 2,200+ arrested</li>
+  <li>Triggered by BJP leader <strong>Kapil Mishra's</strong> incendiary "ultimatum" speech</li>
+  <li>NYT: "If We Kill You, Nothing Will Happen" &mdash; police complicity documented</li>
+  <li>Investigation disproportionately targeted Muslim activists and student leaders under UAPA</li>
+</ul>
+
+<div class="section-header fade-init">
+  <h3>4.4 &mdash; Kashmir: 552 Days of Darkness</h3>
+</div>
+<div class="callout red fade-in">
+<p><strong>August 4, 2019:</strong> Communications blackout. <strong>No internet for 213 days</strong> (until partial 2G March 4, 2020). <strong>4G not restored until February 5, 2021</strong> &mdash; approximately <strong>552 days total</strong>. Declared the longest internet shutdown in any democratic country. Kashmir Chamber of Commerce: $2.4 billion losses, 500,000 job losses.</p>
+</div>
+<ul class="fade-in">
+  <li>All major political leaders arrested: Farooq Abdullah (under PSA), Mehbooba Mufti, Omar Abdullah</li>
+  <li><strong>300+ arrested under Public Safety Act</strong> (detention up to 2 years without trial)</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>4.5 &mdash; COVID-19 Mismanagement</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Metric</th><th>Official</th><th>Reality</th></tr></thead>
+<tbody>
+<tr><td>COVID deaths (2020-2021)</td><td>~480,000</td><td><span class="number">3.4-4.7 million</span> (WHO estimate)</td></tr>
+<tr><td>Undercount factor</td><td>&mdash;</td><td><span class="number">~7-10x</span></td></tr>
+<tr><td>Excess deaths in 2021</td><td>&mdash;</td><td>~2.4 million (JoGH study) &mdash; 7.2x undercount</td></tr>
+</tbody>
+</table>
+</div>
+<ul class="fade-in">
+  <li><strong>Oxygen crisis:</strong> Hospitals ran out. Patients suffocated to death. Families begged on social media.</li>
+  <li><strong>Bodies in Ganges:</strong> Bodies floating in the river, shallow sand graves for hundreds of kilometers.</li>
+  <li><strong>Modi's super-spreader events:</strong> Election rallies in West Bengal (March-April 2021) with tens of thousands unmasked. <strong>Kumbh Mela (April 2021)</strong> &mdash; millions gathered with government blessing.</li>
+  <li>Government rejected and disputed WHO estimates &mdash; refused to release detailed mortality data.</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>4.6 &mdash; Caste Atrocities</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Year</th><th>Crimes Against Dalits</th><th>Dalit Women Assaulted</th></tr></thead>
+<tbody>
+<tr><td>2014</td><td>40,300</td><td>5,149</td></tr>
+<tr><td>2022</td><td><span class="number">57,582</span></td><td><span class="number">9,163</span></td></tr>
+<tr><td><strong>Total 2014-22</strong></td><td><span class="number">409,797</strong></td><td><span class="number">62,819</span></td></tr>
+</tbody>
+</table>
+</div>
+<ul class="fade-in">
+  <li><strong>Rohith Vemula</strong> (Jan 17, 2016): 26-year-old PhD scholar died by suicide after fellowship stopped, expelled from hostel following BJP MP complaint. Suicide note: "The value of a man was reduced to his immediate identity. To a vote."</li>
+  <li><strong>Una Flogging (July 11, 2016):</strong> Seven Dalit family members stripped, chained, and flogged with iron rods by cow vigilantes in Gujarat. 7 Dalits attempted suicide in protest.</li>
+  <li>Rape of Dalit women doubled: 2,233 (2014) &rarr; 4,241 (2022) &mdash; <strong>~11 Dalit women/girls raped per day</strong> in 2022.</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>4.7 &mdash; Women's Safety Failures</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>Hathras gang rape (Sept 2020):</strong> 19-year-old Dalit woman gang-raped. Found with tongue cut off, severe spinal injuries. <strong>Died Sept 29.</strong> Police cremated her body at <strong>2:30 AM &mdash; without family consent &mdash; using petrol.</strong> Family locked inside their house during cremation. Allahabad HC: "incidents have shocked our conscience."</li>
+  <li><strong>Unnao rape case (2017-2019):</strong> 17-year-old Dalit girl gang-raped by <strong>BJP MLA Kuldeep Singh Sengar</strong>. Survivor's father died in police custody (beaten). Truck crashed into survivor's car &mdash; killed two aunts. Sengar convicted (life) &mdash; 2025 Allahabad HC suspended his sentence.</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>4.8 &mdash; Internet Shutdown Capital of the World</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Year</th><th>Shutdowns</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>2018</td><td><span class="number">134</span></td><td>Peak year</td></tr>
+<tr><td>2019</td><td>121</td><td>Includes Kashmir</td></tr>
+<tr><td>2020-2025</td><td>65+</td><td>Every year</td></tr>
+<tr><td><strong>Total since 2012</strong></td><td><span class="number">690+</span></td><td>India #1 globally every year</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-header fade-in">
+  <h3>4.9 &mdash; Press Freedom Destruction</h3>
+</div>
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Year</th><th>India's Press Freedom Rank</th></tr></thead>
+<tbody>
+<tr><td>2014</td><td>~140 / 180</td></tr>
+<tr><td>2023</td><td><span class="number">161 / 180</span></td></tr>
+<tr><td>2026</td><td><span class="number">157 / 180</span></td></tr>
+</tbody>
+</table>
+</div>
+<ul class="fade-in">
+  <li><strong>Adani acquired NDTV (2022-23):</strong> ~65% controlling stake. Founders forced out. Ravish Kumar, Nidhi Razdan, Sreenivasan Jain resigned. RSF: "signals end of pluralism."</li>
+  <li><strong>Newsclick raided (Oct 2023):</strong> Editor arrested under UAPA. SC later said arrest was illegal.</li>
+  <li><strong>Dainik Bhaskar raided (July 2021):</strong> India's largest Hindi newspaper. 30+ locations raided after critical COVID coverage.</li>
+  <li><strong>Mohammed Zubair</strong> (Alt News): arrested June 2022 for 4-year-old tweet &mdash; retaliation for exposing hate speech.</li>
+</ul>
+
+<div class="section-header fade-in">
+  <h3>4.10 &mdash; NEET 2026 &mdash; Education Betrayal</h3>
+</div>
+<ul class="fade-in">
+  <li><strong>May 3, 2026:</strong> NEET-UG held for 2.27 million aspirants across 551 cities</li>
+  <li><strong>May 12, 2026:</strong> Exam cancelled &mdash; 120-140 questions matched a "guess paper" sold for ₹5-10 lakh per student</li>
+  <li><strong>At least 11 NEET aspirants died by suicide</strong> between cancellation and re-test</li>
+  <li><strong>2024 NEET:</strong> 80+ students scored perfect 720/720 (previously only 7 ever). CBI investigated, filed closure report quietly.</li>
+  <li>Al Jazeera (May 26, 2026): "Come back, my son: Indian exam leak leaves trail of death, despair, anger"</li>
+</ul>
+
+<hr class="divider">
+
+<!-- ===== PART 5: BJP LEADERSHIP ===== -->
+<div class="part-header fade-in">
+  <div class="part-num">Part 05</div>
+  <h2>BJP Leadership Hierarchy</h2>
+  <p>The power structure at the top.</p>
+</div>
+
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>Position</th><th>Name</th></tr></thead>
+<tbody>
+<tr><td>Prime Minister</td><td><strong>Narendra Modi</strong></td></tr>
+<tr><td>Home Minister</td><td><strong>Amit Shah</strong> (BJP chief strategist)</td></tr>
+<tr><td>Defence Minister</td><td>Rajnath Singh</td></tr>
+<tr><td>Finance Minister</td><td>Nirmala Sitharaman</td></tr>
+<tr><td>External Affairs</td><td>S. Jaishankar</td></tr>
+<tr><td>BJP President</td><td>J.P. Nadda</td></tr>
+<tr><td>Commerce Minister</td><td>Piyush Goyal</td></tr>
+<tr><td>Education Minister</td><td><strong>Dharmendra Pradhan</strong> (target of CJP protest)</td></tr>
+<tr><td>Women &amp; Child</td><td>Smriti Irani</td></tr>
+<tr><td>Petroleum</td><td>Hardeep Singh Puri</td></tr>
+<tr><td>Road Transport</td><td>Nitin Gadkari</td></tr>
+<tr><td>Jal Shakti</td><td>C.R. Patil</td></tr>
+<tr><td>UP Chief Minister</td><td><strong>Yogi Adityanath</strong> ("Bulldozer Baba")</td></tr>
+<tr><td>Rajasthan CM</td><td>Bhajan Lal Sharma</td></tr>
+<tr><td>MP CM</td><td>Mohan Yadav</td></tr>
+<tr><td>RSS Sarsanghchalak</td><td>Mohan Bhagwat</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- ===== PART 6: CHIEF JUSTICES ===== -->
+<div class="part-header fade-in">
+  <div class="part-num">Part 06</div>
+  <h2>Chief Justices of India 2014-2026</h2>
+  <p>All 13 CJIs &mdash; with controversies documented.</p>
+</div>
+
+<div class="table-wrap fade-in">
+<table>
+<thead><tr><th>#</th><th>CJI</th><th>Tenure</th><th>Controversy</th></tr></thead>
+<tbody>
+<tr><td>31</td><td>R.M. Lodha</td><td>Apr-Sep 2014</td><td>Clean tenure</td></tr>
+<tr><td>32</td><td>H.L. Dattu</td><td>Sep 2014-Dec 2015</td><td>Clean tenure</td></tr>
+<tr><td>33</td><td>T.S. Thakur</td><td>Dec 2015-Jan 2017</td><td>Clean tenure</td></tr>
+<tr><td>34</td><td>J.S. Khehar</td><td>Jan-Aug 2017</td><td>Clean tenure</td></tr>
+<tr><td>35</td><td><strong>Dipak Misra</strong></td><td>Aug 2017-Oct 2018</td><td>4 judges revolt (Jan 2018) &mdash; unprecedented press conference warning of threats to democracy</td></tr>
+<tr><td>36</td><td><strong>Ranjan Gogoi</strong></td><td>Oct 2018-Nov 2019</td><td>Sexual harassment allegation (April 2019). Convened bench with himself to dismiss. Complainant arrested. <strong>Nominated to Rajya Sabha by Modi (March 2020)</strong> &mdash; reward for silence.</td></tr>
+<tr><td>37</td><td>S.A. Bobde</td><td>Nov 2019-Apr 2021</td><td>Headed inquiry that cleared Gogoi. Controversial comment on rape ("will you marry her?").</td></tr>
+<tr><td>38</td><td>N.V. Ramana</td><td>Apr 2021-Aug 2022</td><td>Relatively independent &mdash; pushback on government</td></tr>
+<tr><td>39</td><td>U.U. Lalit</td><td>Aug-Nov 2022</td><td>Short tenure</td></tr>
+<tr><td>40</td><td>D.Y. Chandrachud</td><td>Nov 2022-Nov 2024</td><td>Struck down Electoral Bonds (Feb 2024). Mixed legacy &mdash; deferred many sensitive cases.</td></tr>
+<tr><td>41</td><td>Sanjiv Khanna</td><td>Nov 2024-May 2025</td><td>Short tenure</td></tr>
+<tr><td>42</td><td>B.R. Gavai</td><td>May-Nov 2025</td><td>Short tenure</td></tr>
+<tr><td>43</td><td><strong>Surya Kant</strong></td><td>Nov 2025-Present</td><td><strong>"Cockroaches" comment (May 2026)</strong> &mdash; called unemployed youth "cockroaches" and "parasites." Triggered CJP movement &mdash; led to Sansad Chalo march.</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- ===== SUMMARY ===== -->
+<div class="summary-section fade-in">
+  <h3>The Dark Decade &mdash; By Numbers</h3>
+  <div class="summary-grid">
+    <div class="summary-item"><div class="cat">Economy</div><div class="num">99.3%</div><div class="desc">Demonetization money returned (total failure)</div></div>
+    <div class="summary-item"><div class="cat">Economy</div><div class="num">$353M</div><div class="desc">Net FDI FY 2024-25 (down from $44B peak)</div></div>
+    <div class="summary-item"><div class="cat">Economy</div><div class="num">₹59→₹97</div><div class="desc">Rupee depreciation (63% weaker)</div></div>
+    <div class="summary-item"><div class="cat">Economy</div><div class="num">6.1%</div><div class="desc">Unemployment (45-year high, 2017-18)</div></div>
+    <div class="summary-item"><div class="cat">Democracy</div><div class="num">8,590%</div><div class="desc">ED raids increase vs UPA</div></div>
+    <div class="summary-item"><div class="cat">Democracy</div><div class="num">0.7%</div><div class="desc">ED conviction rate</div></div>
+    <div class="summary-item"><div class="cat">Democracy</div><div class="num">98%</div><div class="desc">ED political targeting (opposition)</div></div>
+    <div class="summary-item"><div class="cat">Democracy</div><div class="num">6 Crore</div><div class="desc">Voter names deleted</div></div>
+    <div class="summary-item"><div class="cat">Democracy</div><div class="num">141</div><div class="desc">MPs suspended in single session (record)</div></div>
+    <div class="summary-item"><div class="cat">Crony</div><div class="num">₹12,769 Cr</div><div class="desc">Electoral Bonds (BJP: 47.5%)</div></div>
+    <div class="summary-item"><div class="cat">Crony</div><div class="num">$150B+</div><div class="desc">Adani market value wiped (Hindenburg)</div></div>
+    <div class="summary-item"><div class="cat">Crony</div><div class="num">1,956%</div><div class="desc">Adani wealth growth under Modi</div></div>
+    <div class="summary-item"><div class="cat">Human Cost</div><div class="num">260+</div><div class="desc">Manipur killed</div></div>
+    <div class="summary-item"><div class="cat">Human Cost</div><div class="num">552</div><div class="desc">Kashmir internet shutdown days</div></div>
+    <div class="summary-item"><div class="cat">Human Cost</div><div class="num">3.4-4.7M</div><div class="desc">COVID excess deaths (WHO vs 480K official)</div></div>
+    <div class="summary-item"><div class="cat">Human Cost</div><div class="num">690+</div><div class="desc">Internet shutdowns since 2012</div></div>
+    <div class="summary-item"><div class="cat">Human Cost</div><div class="num">409,797</div><div class="desc">Caste atrocities 2014-2022</div></div>
+    <div class="summary-item"><div class="cat">Press</div><div class="num">157/180</div><div class="desc">India press freedom rank (2014: ~140)</div></div>
+  </div>
+</div>
+
+</div><!-- end content -->
+
+<!-- FOOTER -->
+<footer>
+  <p>India Dark Decade 2014-2026 &mdash; The Blunders Nobody Talks About</p>
+  <p>Compiled July 21, 2026 &bull; For awareness &bull; For truth &bull; For the people of India</p>
+  <p class="source">Sources: RBI, NCRB, NSSO/PLFS, CMIE, WHO, HRW, Amnesty International, ADR, PRS Legislative Research, World Inequality Lab, Oxfam, Reuters, BBC, The Guardian, NYT, Al Jazeera, Hindenburg Research, Supreme Court Observer India, Frontline (The Hindu), NDTV</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-top" title="Back to top">&#8593;</a>
+
+<script>
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Back to top
+document.querySelector('.back-top').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
