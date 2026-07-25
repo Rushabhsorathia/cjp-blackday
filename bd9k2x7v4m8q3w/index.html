@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#060606">
 <meta name="description" content="BLACK DAY - The True Story of Sansad Chalo, July 20, 2026">
 <title>BLACK DAY - July 20, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,67 +11,68 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
---bg:#080808;--bg1:#0e0e0e;--bg2:#141414;--bg3:#1a1a1a;
+--bg:#060606;--bg1:#0c0c0c;--bg2:#121212;--bg3:#181818;--bg4:#1e1e1e;
 --red:#e11d48;--red-d:#881337;--red-l:#f43f5e;--red-g:linear-gradient(135deg,#e11d48,#7f1d1d);
 --amber:#f59e0b;--blue:#3b82f6;--green:#10b981;--purple:#a855f7;
 --txt:#f3f4f6;--dim:#9ca3af;--gray:#6b7280;--brd:#27272a;--wht:#fff;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--red-d);border-radius:2px}
-
-/* PRELOADER */
-#preloader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s}
-#preloader.hide{opacity:0;pointer-events:none}
-.loader-logo{font-family:'Oswald',sans-serif;font-size:clamp(32px,8vw,64px);font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-l);animation:pulse 1.5s ease-in-out infinite}
-.loader-sub{font-size:13px;color:var(--gray);margin-top:12px;letter-spacing:2px;text-transform:uppercase}
-.loader-bar{width:200px;height:2px;background:var(--brd);margin-top:24px;border-radius:1px;overflow:hidden}
-.loader-bar-fill{height:100%;width:0;background:var(--red-l);animation:load 1.8s ease forwards}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-@keyframes load{0%{width:0}100%{width:100%}}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--red-d)}
 
 /* NAV */
-nav{position:fixed;top:0;width:100%;background:rgba(8,8,8,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);z-index:1000;padding:14px 0;transition:padding .3s}
-nav.scrolled{padding:8px 0}
+nav{position:fixed;top:0;width:100%;background:rgba(6,6,6,.8);backdrop-filter:blur(24px);border-bottom:1px solid var(--brd);z-index:1000;padding:16px 0;transition:all .3s}
+nav.scrolled{padding:10px 0;background:rgba(6,6,6,.95)}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 24px}
-.logo{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.logo{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:10px}
 .logo .b{color:var(--wht)}.logo .d{color:var(--red-l)}
-.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-.nav-links a{color:var(--dim);text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:1px;padding:8px 14px;border-radius:6px;transition:all .25s;cursor:pointer;position:relative}
-.nav-links a:hover{color:var(--wht);background:var(--bg2)}
-.nav-links a.active{color:var(--red-l)}
-.menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--wht)}
-.menu-btn svg{width:24px;height:24px}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--red-l);box-shadow:0 0 12px var(--red-l)}
+.nav-links{display:flex;gap:2px;list-style:none;align-items:center}
+.nav-links a{color:var(--dim);text-decoration:none;font-size:12px;font-weight:500;padding:8px 14px;border-radius:8px;transition:all .2s;cursor:pointer;text-transform:uppercase;letter-spacing:.5px}
+.nav-links a:hover{color:var(--wht);background:var(--bg3)}
+.nav-links a.active{color:var(--red-l);background:rgba(244,63,94,.08)}
+.nav-links .nav-dash{background:var(--red-g);color:var(--wht);font-weight:600}
+.nav-links .nav-dash:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(225,29,72,.3)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--wht);padding:4px}
+.menu-btn svg{width:22px;height:22px}
 
-/* CONTAINER */
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-section{padding:100px 0;position:relative}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 50%,rgba(225,29,72,.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--red-l);background:rgba(244,63,94,.08);border:1px solid rgba(244,63,94,.2);padding:6px 16px;border-radius:100px;margin-bottom:28px}
+.hero-date{font-size:13px;color:var(--gray);letter-spacing:4px;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(56px,14vw,140px);font-weight:700;line-height:.9;text-transform:uppercase;letter-spacing:2px;margin-bottom:28px}
+.hero h1 .black{color:var(--wht)}.hero h1 .day{color:var(--red-l);text-shadow:0 0 60px rgba(244,63,94,.3)}
+.hero-desc{font-size:clamp(15px,2.5vw,19px);color:var(--dim);max-width:680px;margin:0 auto 36px;line-height:1.7}
+.hero-desc strong{color:var(--wht)}.hero-desc em{color:var(--red-l);font-style:normal}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 28px;border-radius:10px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;text-decoration:none;cursor:pointer;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif}
+.btn-primary{background:var(--red-g);color:var(--wht)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(225,29,72,.35)}
+.btn-ghost{background:var(--bg3);color:var(--wht);border:1px solid var(--brd)}
+.btn-ghost:hover{border-color:var(--red-l);color:var(--red-l);transform:translateY(-1px)}
+.scroll-ind{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);color:var(--gray);font-size:18px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:.5}50%{transform:translateX(-50%) translateY(8px);opacity:1}}
+
+/* LIVE STATS BAR */
+.live-bar{max-width:1100px;margin:-40px auto 0;position:relative;z-index:10;background:var(--bg2);border:1px solid var(--brd);border-radius:16px;padding:20px 24px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-around;align-items:center}
+.live-stat{text-align:center}
+.live-stat .num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--red-l);line-height:1}
+.live-stat .lbl{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.live-divider{width:1px;height:32px;background:var(--brd)}
+
+/* SECTIONS */
+section{padding:80px 24px;position:relative}
+.container{max-width:1100px;margin:0 auto}
 .section-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--red-l);margin-bottom:12px}
 .section-tag::before{content:'';width:24px;height:1px;background:var(--red-l)}
 .section-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.1;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
 .section-sub{font-size:15px;color:var(--dim);max-width:600px;margin-bottom:40px}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(225,29,72,.08) 0%,transparent 60%);pointer-events:none}
-.hero-date{font-size:13px;color:var(--gray);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
-.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(48px,12vw,120px);font-weight:700;line-height:.95;text-transform:uppercase;letter-spacing:2px;margin-bottom:24px}
-.hero h1 .black{color:var(--wht)}.hero h1 .day{color:var(--red-l)}
-.hero-desc{font-size:clamp(15px,2.5vw,19px);color:var(--dim);max-width:700px;margin:0 auto 32px;line-height:1.7}
-.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{padding:14px 28px;border-radius:8px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;text-decoration:none;cursor:pointer;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary{background:var(--red-g);color:var(--wht)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(225,29,72,.3)}
-.btn-ghost{background:transparent;color:var(--wht);border:1px solid var(--brd)}
-.btn-ghost:hover{border-color:var(--red-l);color:var(--red-l)}
-.scroll-ind{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--gray);font-size:20px;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-
 /* CARDS */
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
-.card{background:var(--bg2);border:1px solid var(--brd);border-radius:12px;padding:24px;transition:all .3s}
+.card{background:var(--bg2);border:1px solid var(--brd);border-radius:16px;padding:24px;transition:all .3s}
 .card:hover{transform:translateY(-4px);border-color:var(--red-d);box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .card-date{display:inline-block;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--red-d);color:var(--wht);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
 .card h3{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--wht);margin-bottom:8px}
@@ -79,45 +80,37 @@ section{padding:100px 0;position:relative}
 .card p strong{color:var(--wht)}
 .card-source{font-size:11px;color:var(--gray);margin-top:10px;font-style:italic}
 
-/* STAT */
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.stat{background:var(--bg2);border:1px solid var(--brd);border-radius:12px;padding:24px;text-align:center}
-.stat-num{font-family:'Oswald',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:700;color:var(--red-l);line-height:1}
-.stat-label{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
-.stat-sub{font-size:11px;color:var(--gray);margin-top:2px}
-
 /* TIMELINE */
-.timeline{position:relative;padding-left:32px}
-.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--red),var(--red-d),transparent)}
-.tl-item{position:relative;margin-bottom:32px}
-.tl-item::before{content:'';position:absolute;left:-28px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--red);border:2px solid var(--bg)}
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--red),var(--red-d),transparent)}
+.tl-item{position:relative;margin-bottom:28px}
+.tl-item::before{content:'';position:absolute;left:-26px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--red);border:2px solid var(--bg);box-shadow:0 0 8px var(--red)}
 .tl-time{font-size:11px;font-weight:700;color:var(--red-l);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.tl-item h3{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;color:var(--wht);margin-bottom:6px;text-transform:uppercase}
+.tl-item h3{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--wht);margin-bottom:6px;text-transform:uppercase}
 .tl-item p{font-size:14px;color:var(--dim);line-height:1.7}
 .tl-item p strong{color:var(--wht)}
 
-/* QUOTE */
-.quote-box{background:var(--bg2);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:16px 20px;margin:12px 0}
-.quote-box p{font-size:14px;color:var(--red-l);font-style:italic;margin:0}
-
-/* PILLS */
-.pill{display:inline-block;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--bg3);color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-
-/* TABLE */
-.tbl-wrap{overflow-x:auto;margin:16px 0}
-table{width:100%;border-collapse:collapse;font-size:13px;min-width:500px}
-thead th{background:var(--red-d);color:var(--wht);padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
-tbody tr:nth-child(even){background:var(--bg2)}
-tbody tr:nth-child(odd){background:var(--bg3)}
-td{padding:10px 12px;border-bottom:1px solid var(--brd);color:var(--txt);vertical-align:top}
-td strong{color:var(--wht)}
+/* STAT */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.stat{background:var(--bg2);border:1px solid var(--brd);border-radius:12px;padding:20px;text-align:center}
+.stat-num{font-family:'Oswald',sans-serif;font-size:clamp(28px,5vw,40px);font-weight:700;color:var(--red-l);line-height:1}
+.stat-label{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
 
 /* TAG CLOUD */
 .tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
 .tag{background:var(--red-d);color:var(--wht);font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px}
 
-/* LOADING STATE */
-.load-state{text-align:center;padding:40px;color:var(--gray);font-size:13px}
+/* TABLE */
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:500px}
+thead th{background:var(--red-d);color:var(--wht);padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+tbody tr:nth-child(even){background:var(--bg2)}
+tbody tr:nth-child(odd){background:var(--bg3)}
+td{padding:8px 12px;border-bottom:1px solid var(--brd);color:var(--txt)}
+
+/* QUOTE */
+.quote-box{background:var(--bg2);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:16px 20px;margin:12px 0}
+.quote-box p{font-size:14px;color:var(--red-l);font-style:italic;margin:0}
 
 /* FOOTER */
 footer{padding:40px 24px;border-top:1px solid var(--brd);text-align:center;background:var(--bg1)}
@@ -127,32 +120,29 @@ footer p{font-size:12px;color:var(--gray);margin-bottom:6px}
 #backTop{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--red);color:var(--wht);border:none;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;z-index:100}
 #backTop.show{opacity:1;pointer-events:auto}
 
+/* ANIM */
+[data-anim]{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+[data-anim].visible{opacity:1;transform:none}
+
 /* RESPONSIVE */
 @media(max-width:768px){
-.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(8,8,8,.98);border-bottom:1px solid var(--brd);padding:16px}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(6,6,6,.98);border-bottom:1px solid var(--brd);padding:16px;gap:4px}
 .nav-links.open{display:flex}
-.nav-links a{width:100%}
 .menu-btn{display:block}
-section{padding:60px 0}
+section{padding:50px 16px}
 .card-grid{grid-template-columns:1fr}
 .stat-grid{grid-template-columns:repeat(2,1fr)}
-.timeline{padding-left:24px}
+.timeline{padding-left:20px}
+.live-bar{margin:-20px 12px 0}
 }
 </style>
 </head>
 <body>
 
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="loader-logo">BLACK <span style="color:#f3f4f6">DAY</span></div>
-  <div class="loader-sub">Loading the truth...</div>
-  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-</div>
-
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
-    <div class="logo"><span class="b">Black</span> <span class="d">Day</span></div>
+    <div class="logo"><span class="logo-dot"></span><span class="b">Black</span> <span class="d">Day</span></div>
     <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -163,25 +153,34 @@ section{padding:60px 0}
       <li><a data-scroll="aftermath">Aftermath</a></li>
       <li><a data-scroll="power">Power</a></li>
       <li><a data-scroll="numbers">Numbers</a></li>
+      <li><a href="dashboard.html" class="nav-dash">Dashboard</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero" id="top">
-  <div class="hero-date">July 20, 2026 &bull; New Delhi, India</div>
+  <div class="hero-badge">Documented Evidence</div>
+  <div class="hero-date">July 20, 2026 - New Delhi, India</div>
   <h1><span class="black">BLACK</span> <span class="day">DAY</span></h1>
   <p class="hero-desc">
-    When <strong style="color:#fff">50,000 students</strong> marched to Parliament demanding accountability for a leaked exam, they were met with <strong style="color:#f43f5e">tear gas, lathis with nails, and electric shock batons.</strong> This is the true story.
+    When <strong>50,000 students</strong> marched to Parliament demanding accountability for a leaked exam, they were met with <em>tear gas, lathis with nails, and electric shock batons.</em> This is the true story of the Sansad Chalo March.
   </p>
   <div class="hero-cta">
     <button class="btn btn-primary" data-scroll="timeline">Read the Full Story</button>
-    <a href="../index.html" class="btn btn-ghost">Main Site</a>
+    <a href="dashboard.html" class="btn btn-ghost">Live Dashboard</a>
   </div>
   <div class="scroll-ind">&#8595;</div>
 </div>
 
-<!-- CONTENT SECTIONS (loaded via AJAX reveal) -->
+<!-- LIVE STATS BAR -->
+<div class="live-bar" id="liveBar">
+  <div class="live-stat"><div class="num" id="lv-total">-</div><div class="lbl">Total Requests</div></div>
+  <div class="live-divider"></div>
+  <div class="live-stat"><div class="num" id="lv-unique" style="color:var(--green)">-</div><div class="lbl">Unique Visitors</div></div>
+  <div class="live-divider"></div>
+  <div class="live-stat"><div class="num" id="lv-24h" style="color:var(--amber)">-</div><div class="lbl">Last 24h</div></div>
+</div>
 
 <!-- ORIGIN -->
 <section id="origin" data-anim>
@@ -189,81 +188,29 @@ section{padding:60px 0}
     <div class="section-tag">How It Started</div>
     <h2 class="section-title">From "Cockroaches" to a Movement</h2>
     <p class="section-sub">A judge's insult. A leaked exam. 11 student suicides. This is how a meme became a revolution.</p>
-
     <div class="card-grid">
-      <div class="card">
-        <div class="card-date">May 15, 2026</div>
-        <h3>CJI Calls Youth "Cockroaches"</h3>
-        <p>Chief Justice of India <strong>Surya Kant</strong> compared unemployed youth to <strong>"cockroaches"</strong> and <strong>"parasites"</strong> in open court. Triggered nationwide outrage.</p>
-      </div>
-      <div class="card">
-        <div class="card-date">May 16, 2026</div>
-        <h3>CJP Born</h3>
-        <p><strong>Abhijeet Dipke</strong> (30, Boston University graduate) founded the <strong>Cockroach Janta Party</strong> &mdash; a satirical movement flipping the insult into a badge of pride.</p>
-      </div>
-      <div class="card">
-        <div class="card-date">May 12, 2026</div>
-        <h3>NEET Paper Leak</h3>
-        <p><strong>2.27 million</strong> aspirants took NEET-UG. Exam <strong>cancelled</strong> after 120-140 questions matched a "guess paper" sold for Rs 5-10 lakh per student.</p>
-      </div>
-      <div class="card">
-        <div class="card-date">Post-Leak</div>
-        <h3>11 Student Suicides</h3>
-        <p><strong>11+ NEET aspirants died by suicide</strong> between cancellation and re-test. One father: <em>"The system killed my son."</em></p>
-        <div class="card-source">Al Jazeera, Hindustan Times</div>
-      </div>
+      <div class="card"><div class="card-date">May 15, 2026</div><h3>CJI Calls Youth "Cockroaches"</h3><p>Chief Justice of India <strong>Surya Kant</strong> compared unemployed youth to <strong>"cockroaches"</strong> and <strong>"parasites"</strong> in open court. Triggered nationwide outrage.</p></div>
+      <div class="card"><div class="card-date">May 16, 2026</div><h3>CJP Born</h3><p><strong>Abhijeet Dipke</strong> (30, Boston University graduate) founded the <strong>Cockroach Janta Party</strong> &mdash; a satirical movement flipping the insult into pride.</p></div>
+      <div class="card"><div class="card-date">May 12, 2026</div><h3>NEET Paper Leak</h3><p><strong>2.27 million</strong> aspirants took NEET-UG. Exam <strong>cancelled</strong> after 120-140 questions matched a "guess paper" sold for Rs 5-10 lakh per student.</p></div>
+      <div class="card"><div class="card-date">Post-Leak</div><h3>11 Student Suicides</h3><p><strong>11+ NEET aspirants died by suicide</strong> between cancellation and re-test. One father: <em>"The system killed my son."</em><div class="card-source">Al Jazeera, Hindustan Times</div></p></div>
     </div>
   </div>
 </section>
 
-<!-- JULY 20 TIMELINE -->
+<!-- TIMELINE -->
 <section id="timeline" data-anim style="background:var(--bg1)">
   <div class="container">
     <div class="section-tag">The Day</div>
     <h2 class="section-title">July 20: Hour by Hour</h2>
-    <p class="section-sub">From dawn barricades to midnight re-occupation. Every key moment documented.</p>
-
+    <p class="section-sub">From dawn barricades to midnight re-occupation.</p>
     <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-time">4:00 AM</div>
-        <h3>Dawn Crackdown Begins</h3>
-        <p>Delhi Police <strong>raids Jantar Mantar</strong>. Protesters removed. Stage dismantled. Section 163 BNSS imposed across central Delhi.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">6:00 AM</div>
-        <h3>5 Metro Stations Shut</h3>
-        <p>Rajiv Chowk, Patel Chowk, Central Secretariat, Udyog Bhawan, Janpath <strong>sealed by DMRC</strong>. Major roads barricaded.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">9:00 AM</div>
-        <h3>Thousands Defy Orders</h3>
-        <p>Despite prohibitory orders, <strong>50,000+ protesters</strong> gather near Jantar Mantar. Crowd swells rapidly.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">11:25 AM</div>
-        <h3>Tear Gas &amp; Lathi Charge</h3>
-        <p>Police open <strong>tear gas shells</strong>. Lathicharge begins. <strong>Electrified barricades</strong> deployed. Protesters pelted with stones from trucks.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">12:00 PM</div>
-        <h3>Mass Detentions Begin</h3>
-        <p><strong>~70 protesters detained</strong>. Dragged into buses. Families unable to contact them for hours. <strong>DCP Sandeep Lamba</strong> caught on video slapping a woman protester.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">3:00 PM</div>
-        <h3>Opposition Leaders Detained</h3>
-        <p><strong>Rahul &amp; Priyanka Gandhi</strong> stage sit-in near Modi's residence. Both <strong>physically detained</strong>. Rahul dragged away &mdash; nosebleed visible.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">5:00 PM</div>
-        <h3>Nadda Meeting Fails</h3>
-        <p>CJP meets BJP's JP Nadda for <strong>4 hours</strong>. Zero demands met. Ranka: <em>"Wasted 4 hours for this useless meeting."</em></p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">10:00 PM</div>
-        <h3>Re-Occupation of Jantar Mantar</h3>
-        <p>Protesters <strong>return to the cleared site</strong>. Dipke reclaims the stage. Movement not dying &mdash; escalating.</p>
-      </div>
+      <div class="tl-item"><div class="tl-time">4:00 AM</div><h3>Dawn Crackdown</h3><p>Delhi Police <strong>raids Jantar Mantar</strong>. Protesters removed. Stage dismantled. Section 163 BNSS imposed.</p></div>
+      <div class="tl-item"><div class="tl-time">6:00 AM</div><h3>5 Metro Stations Shut</h3><p>Rajiv Chowk, Patel Chowk, Central Secretariat, Udyog Bhawan, Janpath <strong>sealed by DMRC</strong>.</p></div>
+      <div class="tl-item"><div class="tl-time">9:00 AM</div><h3>Thousands Defy Orders</h3><p>Despite prohibitory orders, <strong>50,000+ protesters</strong> gather. Crowd swells rapidly.</p></div>
+      <div class="tl-item"><div class="tl-time">11:25 AM</div><h3>Tear Gas &amp; Lathi Charge</h3><p>Police open <strong>tear gas</strong>. Lathicharge begins. <strong>Electrified barricades</strong>. <strong>Lathis with nails</strong> used on students.</p></div>
+      <div class="tl-item"><div class="tl-time">12:00 PM</div><h3>Mass Detentions</h3><p><strong>~70 protesters detained</strong>. Dragged into buses. Families can't contact them. <strong>DCP slaps woman protester</strong> on camera.</p></div>
+      <div class="tl-item"><div class="tl-time">3:00 PM</div><h3>Opposition Detained</h3><p><strong>Rahul &amp; Priyanka Gandhi</strong> detained near Modi's residence. Rahul <strong>physically dragged</strong>. Nosebleed visible.</p></div>
+      <div class="tl-item"><div class="tl-time">10:00 PM</div><h3>Re-Occupation</h3><p>Protesters <strong>return to cleared site</strong>. Dipke reclaims the stage. Movement escalating.</p></div>
     </div>
   </div>
 </section>
@@ -274,28 +221,14 @@ section{padding:60px 0}
     <div class="section-tag">The Movement</div>
     <h2 class="section-title">34 Cities. One Generation.</h2>
     <p class="section-sub">This was not just Delhi. India's Gen Z rose from Kashmir to Kerala.</p>
-
     <div class="tag-cloud">
-      <span class="tag">Mumbai</span><span class="tag">Patna</span><span class="tag">Bengaluru</span><span class="tag">Hyderabad</span><span class="tag">Kolkata</span><span class="tag">Chennai</span><span class="tag">Indore</span><span class="tag">Jaipur</span><span class="tag">Chandigarh</span><span class="tag">Lucknow</span><span class="tag">Ahmedabad</span><span class="tag">Surat</span><span class="tag">Shimla</span><span class="tag">Guwahati</span><span class="tag">Itanagar</span><span class="tag">Raipur</span><span class="tag">Bhopal</span><span class="tag">Jodhpur</span><span class="tag">Kurukshetra</span><span class="tag">Jammu</span><span class="tag">Dharamshala</span><span class="tag">Prayagraj</span><span class="tag">Bilaspur</span><span class="tag">Davangere</span><span class="tag">Aizawl</span><span class="tag">Shillong</span><span class="tag">Agartala</span><span class="tag">Visakhapatnam</span><span class="tag">Trivendrum</span><span class="tag">Rampur</span><span class="tag">Unnao</span><span class="tag">Kalaburgi</span><span class="tag">Vizianagaram</span><span class="tag">Rajahmundry</span>
+      <span class="tag">Mumbai</span><span class="tag">Patna</span><span class="tag">Bengaluru</span><span class="tag">Hyderabad</span><span class="tag">Kolkata</span><span class="tag">Chennai</span><span class="tag">Indore</span><span class="tag">Jaipur</span><span class="tag">Chandigarh</span><span class="tag">Lucknow</span><span class="tag">Ahmedabad</span><span class="tag">Surat</span><span class="tag">Shimla</span><span class="tag">Guwahati</span><span class="tag">Itanagar</span><span class="tag">Raipur</span><span class="tag">Bhopal</span><span class="tag">Jodhpur</span><span class="tag">Jammu</span><span class="tag">Dharamshala</span><span class="tag">Prayagraj</span><span class="tag">Aizawl</span><span class="tag">Shillong</span><span class="tag">Agartala</span><span class="tag">Visakhapatnam</span><span class="tag">Trivendrum</span>
     </div>
-
     <div class="card-grid" style="margin-top:32px">
-      <div class="card" style="border-left:3px solid var(--red)">
-        <h3 style="color:var(--red-l)">22 Million+</h3>
-        <p>CJP Instagram followers. <strong>Overtook BJP's official page</strong> in less than a week.</p>
-      </div>
-      <div class="card" style="border-left:3px solid var(--green)">
-        <h3 style="color:var(--green)">94%</h3>
-        <p>Audience from India. BJP claimed "foreign-funded" &mdash; Dipke proved them wrong with data.</p>
-      </div>
-      <div class="card" style="border-left:3px solid var(--amber)">
-        <h3 style="color:var(--amber)">1.3 Lakh</h3>
-        <p>People registered support via <strong>missed-call campaign</strong> for Parliament march.</p>
-      </div>
-      <div class="card" style="border-left:3px solid var(--blue)">
-        <h3 style="color:var(--blue)">Bollywood Backing</h3>
-        <p>Aamir Khan, Sonakshi Sinha, Swara Bhaskar, Daniel Fernandes all spoke in support.</p>
-      </div>
+      <div class="card" style="border-left:3px solid var(--red)"><h3 style="color:var(--red-l)">22 Million+</h3><p>CJP Instagram followers. <strong>Overtook BJP's official page</strong> in less than a week.</p></div>
+      <div class="card" style="border-left:3px solid var(--green)"><h3 style="color:var(--green)">94%</h3><p>Audience from India. BJP claimed "foreign-funded" &mdash; Dipke proved them wrong with data.</p></div>
+      <div class="card" style="border-left:3px solid var(--amber)"><h3 style="color:var(--amber)">1.3 Lakh</h3><p>People registered support via <strong>missed-call campaign</strong>.</p></div>
+      <div class="card" style="border-left:3px solid var(--blue)"><h3 style="color:var(--blue)">Bollywood Backing</h3><p>Aamir Khan, Sonakshi Sinha, Swara Bhaskar, Daniel Fernandes spoke in support.</p></div>
     </div>
   </div>
 </section>
@@ -303,33 +236,13 @@ section{padding:60px 0}
 <!-- AFTERMATH -->
 <section id="aftermath" data-anim style="background:var(--bg1)">
   <div class="container">
-    <div class="section-tag">What Happened Next</div>
+    <div class="section-tag">Aftermath</div>
     <h2 class="section-title">July 21-23: Escalation</h2>
-
     <div class="card-grid">
-      <div class="card">
-        <div class="card-date">Jul 21</div>
-        <h3>Rahul Gandhi Dragged Away</h3>
-        <p>Congress leaders detained near Modi's residence. Rahul <strong>physically dragged</strong> by police. <strong>Nosebleed visible</strong> in photos. Taken in police bus.</p>
-        <div class="card-source">Reuters, NDTV</div>
-      </div>
-      <div class="card">
-        <div class="card-date">Jul 21</div>
-        <h3>20 CRPF Companies Rushed to Delhi</h3>
-        <p>Deployed from <strong>West Bengal</strong>. Dipke: government sending <strong>"mixed signals"</strong> &mdash; talks + crackdown simultaneously.</p>
-        <div class="card-source">Hindustan Times</div>
-      </div>
-      <div class="card">
-        <div class="card-date">Jul 22</div>
-        <h3>Exam Manifesto: 5 Demands</h3>
-        <p><strong>1.</strong> Rs 10,000 compensation per affected student<br><strong>2.</strong> Prevent paper leaks<br><strong>3.</strong> Transparent exams<br><strong>4.</strong> Action against perpetrators<br><strong>5.</strong> <strong style="color:var(--red-l)">Sack Pradhan</strong></p>
-      </div>
-      <div class="card">
-        <div class="card-date">Jul 23</div>
-        <h3>"Non-Negotiable"</h3>
-        <p>CJP declares Pradhan's resignation <strong>non-negotiable</strong>. Dipke to Modi: <em>"Tell the country why he's so important after so many student deaths."</em></p>
-        <div class="card-source">India TV, ThePrint</div>
-      </div>
+      <div class="card"><div class="card-date">Jul 21</div><h3>Rahul Gandhi Dragged Away</h3><p>Congress leaders detained. Rahul <strong>physically dragged</strong>. <strong>Nosebleed visible</strong> in photos.<div class="card-source">Reuters, NDTV</div></p></div>
+      <div class="card"><div class="card-date">Jul 21</div><h3>20 CRPF Companies to Delhi</h3><p>Deployed from <strong>West Bengal</strong>. Dipke: <strong>"mixed signals"</strong> from government.<div class="card-source">Hindustan Times</div></p></div>
+      <div class="card"><div class="card-date">Jul 22</div><h3>Exam Manifesto: 5 Demands</h3><p><strong>1.</strong> Rs 10,000 compensation per student<br><strong>2.</strong> Prevent paper leaks<br><strong>3.</strong> Transparent exams<br><strong>4.</strong> Action against perpetrators<br><strong>5.</strong> <strong style="color:var(--red-l)">Sack Pradhan</strong></p></div>
+      <div class="card"><div class="card-date">Jul 23</div><h3>"Non-Negotiable"</h3><p>Dipke to Modi: <em>"Tell the country why he's so important after so many student deaths."</em><div class="card-source">India TV, ThePrint</div></p></div>
     </div>
   </div>
 </section>
@@ -340,32 +253,16 @@ section{padding:60px 0}
     <div class="section-tag">Power vs People</div>
     <h2 class="section-title">The State Fights Back</h2>
     <p class="section-sub">Courts, ministries, police, media &mdash; every institution responded. Here's how.</p>
-
-    <h3 style="font-family:'Oswald',sans-serif;font-size:18px;text-transform:uppercase;color:var(--red-l);margin-bottom:16px;letter-spacing:1px;">The Courts</h3>
-    <div class="card-grid" style="margin-bottom:32px">
-      <div class="card" style="border:2px solid var(--red)">
-        <span class="pill" style="background:var(--red);color:#fff">Supreme Court</span>
-        <h3>CJI Refuses to Watch Brutality Videos</h3>
-        <p style="margin-top:8px"><strong>Surya Kant</strong> (the same judge who said "cockroaches"): <em>"Don't waste our time. We are not interested in videos."</em></p>
-      </div>
-      <div class="card">
-        <span class="pill" style="background:var(--amber);color:#000">Delhi High Court</span>
-        <h3>Police Brutality PILs Accepted</h3>
-        <p style="margin-top:8px">Court ordered <strong>preserve ALL CCTV, body-cam, drone footage</strong>. Allegations: lathis with nails, shock batons, molestation of women. Next hearing: <strong>September 11.</strong></p>
-      </div>
-      <div class="card">
-        <span class="pill" style="background:var(--blue);color:#fff">Legal Attacks</span>
-        <h3>All Challenges to CJP Dismissed</h3>
-        <p style="margin-top:8px">Allahabad HC PIL by BJP functionary: <strong>dismissed</strong>. SC CBI plea: <strong>declined</strong>. CJP not registered with ECI but can't be banned.</p>
-      </div>
+    <div class="card-grid" style="margin-bottom:24px">
+      <div class="card" style="border:2px solid var(--red)"><div class="tag" style="background:var(--red)">Supreme Court</div><h3>CJI Refuses to Watch Brutality Videos</h3><p style="margin-top:8px"><strong>Surya Kant</strong>: <em>"Don't waste our time. We are not interested in videos."</em></p></div>
+      <div class="card"><div class="tag" style="background:var(--amber);color:#000">Delhi High Court</div><h3>Police Brutality PILs Accepted</h3><p style="margin-top:8px">Ordered <strong>preserve ALL CCTV, body-cam, drone footage</strong>. Allegations: lathis with nails, shock batons, molestation of women. Next hearing: <strong>September 11.</strong></p></div>
+      <div class="card"><div class="tag" style="background:var(--blue)">Legal Attacks</div><h3>All Challenges to CJP Dismissed</h3><p style="margin-top:8px">Allahabad HC: <strong>dismissed</strong>. SC CBI plea: <strong>declined</strong>. No ED/tax probe materialized.</p></div>
     </div>
-
-    <h3 style="font-family:'Oswald',sans-serif;font-size:18px;text-transform:uppercase;color:var(--red-l);margin-bottom:16px;letter-spacing:1px;">The BJP Narrative</h3>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>Label</th><th>Who Said It</th><th>Reality</th></tr></thead>
+        <thead><tr><th>Label Used</th><th>Who Said It</th><th>Reality</th></tr></thead>
         <tbody>
-          <tr><td><strong style="color:#f43f5e">"B-team of terrorism"</strong></td><td>Pradhan (Edu Min)</td><td><em>"Those whom democracy rejected come in disguise."</em></td></tr>
+          <tr><td><strong style="color:#f43f5e">"B-team of terrorism"</strong></td><td>Pradhan</td><td><em>"Those whom democracy rejected come in disguise."</em></td></tr>
           <tr><td><strong style="color:#f43f5e">"49% from Pakistan"</strong></td><td>Sukanta Majumdar</td><td><strong style="color:#10b981">FALSE.</strong> 94%+ Indian.</td></tr>
           <tr><td><strong style="color:#f43f5e">"George Soros gang"</strong></td><td>Kiren Rijiju</td><td>Unsubstantiated.</td></tr>
           <tr><td><strong style="color:#f43f5e">"Deep State Dipke"</strong></td><td>Arnab Goswami</td><td>"Boston meets JNU" conspiracy.</td></tr>
@@ -373,7 +270,6 @@ section{padding:60px 0}
         </tbody>
       </table>
     </div>
-
     <div class="quote-box" style="margin-top:24px">
       <p>"Sir, we are not terrorists. If the government is stubborn, we are more stubborn."</p>
       <p style="font-size:12px;color:var(--gray);margin-top:6px">&mdash; Abhijeet Dipke, CJP Founder</p>
@@ -386,16 +282,13 @@ section{padding:60px 0}
   <div class="container">
     <div class="section-tag">By The Numbers</div>
     <h2 class="section-title">The Cost of One Day</h2>
-
     <div class="stat-grid">
-      <div class="stat"><div class="stat-num" data-count="50000" data-suffix="+">0</div><div class="stat-label">Protesters</div><div class="stat-sub">Indian Express estimate</div></div>
-      <div class="stat"><div class="stat-num" data-count="100" data-suffix="+">0</div><div class="stat-label">Detained</div><div class="stat-sub">Delhi Police</div></div>
-      <div class="stat"><div class="stat-num" data-count="150" data-suffix="~">0</div><div class="stat-label">Hospitalized</div><div class="stat-sub">Students injured</div></div>
-      <div class="stat"><div class="stat-num" data-count="118" data-suffix="+">0</div><div class="stat-label">Police Injured</div><div class="stat-sub">Official count</div></div>
-      <div class="stat"><div class="stat-num" data-count="10">0</div><div class="stat-label">FIRs Filed</div><div class="stat-sub">Against students</div></div>
-      <div class="stat"><div class="stat-num" data-count="34">0</div><div class="stat-label">Cities Protesting</div><div class="stat-sub">Across India</div></div>
-      <div class="stat"><div class="stat-num" data-count="0">0</div><div class="stat-label">Demands Met</div><div class="stat-sub">After 4-hour Nadda meeting</div></div>
-      <div class="stat"><div class="stat-num" data-count="11" data-suffix="+">0</div><div class="stat-label">Student Suicides</div><div class="stat-sub">Post NEET leak</div></div>
+      <div class="stat"><div class="stat-num" data-count="50000" data-suffix="+">0</div><div class="stat-label">Protesters</div></div>
+      <div class="stat"><div class="stat-num" data-count="150" data-prefix="~">0</div><div class="stat-label">Hospitalized</div></div>
+      <div class="stat"><div class="stat-num" data-count="10">0</div><div class="stat-label">FIRs Filed</div></div>
+      <div class="stat"><div class="stat-num" data-count="34">0</div><div class="stat-label">Cities</div></div>
+      <div class="stat"><div class="stat-num" data-count="0">0</div><div class="stat-label">Demands Met</div></div>
+      <div class="stat"><div class="stat-num" data-count="11" data-suffix="+">0</div><div class="stat-label">Suicides</div></div>
     </div>
   </div>
 </section>
@@ -404,7 +297,7 @@ section{padding:60px 0}
 <section data-anim style="text-align:center">
   <div class="container">
     <h2 class="section-title" style="margin-bottom:16px">This Is Not the End.</h2>
-    <p class="section-sub" style="margin:0 auto 24px">The movement continues. The demands remain unmet. Pradhan has not resigned. Share this. Talk about this. Don't let them forget.</p>
+    <p class="section-sub" style="margin:0 auto 24px">The movement continues. Pradhan has not resigned. Share this. Talk about this.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
       <a href="../index.html" class="btn btn-primary">Full Detailed Site</a>
       <a href="../INDIA-DARK-DECADE-2014-2026.html" class="btn btn-ghost" target="_blank">India Dark Decade</a>
@@ -412,87 +305,61 @@ section{padding:60px 0}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>Black Day &bull; July 20, 2026 &bull; For awareness. For truth. For the students.</p>
-  <p style="margin-top:4px">Sources: BBC, Reuters, The Guardian, Al Jazeera, NDTV, The Hindu, Hindustan Times, AP, CNN, Times of India</p>
+  <p style="margin-top:4px">Sources: BBC, Reuters, The Guardian, Al Jazeera, NDTV, The Hindu, Hindustan Times, AP, CNN</p>
 </footer>
 
-<!-- BACK TO TOP -->
 <button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 
 <script>
-// PRELOADER
-window.addEventListener('load',()=>{
-  setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},1200);
-});
-
-// NAV SCROLL
+// NAV
 const nav=document.getElementById('nav');
 const backTop=document.getElementById('backTop');
 window.addEventListener('scroll',()=>{
-  nav.classList.toggle('scrolled',window.scrollY>50);
-  backTop.classList.toggle('show',window.scrollY>400);
-  // Active nav link
-  const sections=document.querySelectorAll('section[id]');
-  let current='';
-  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.id});
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    a.classList.toggle('active',a.dataset.scroll===current);
+  nav.classList.toggle('scrolled',scrollY>50);
+  backTop.classList.toggle('show',scrollY>400);
+  document.querySelectorAll('section[id]').forEach(s=>{
+    if(scrollY>=s.offsetTop-100){
+      document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.scroll===s.id));
+    }
   });
 });
 
 // SMOOTH SCROLL
 document.querySelectorAll('[data-scroll]').forEach(el=>{
   el.addEventListener('click',()=>{
-    const target=document.getElementById(el.dataset.scroll);
-    if(target){
-      target.scrollIntoView({behavior:'smooth'});
-      document.querySelector('.nav-links').classList.remove('open');
-    }
+    document.getElementById(el.dataset.scroll)?.scrollIntoView({behavior:'smooth'});
+    document.querySelector('.nav-links').classList.remove('open');
   });
 });
 
-// INTERSECTION OBSERVER (AJAX-style reveal)
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.style.opacity='1';
-      entry.target.style.transform='none';
-      // Animate counters
-      entry.target.querySelectorAll('[data-count]').forEach(el=>{
-        animateCount(el);
-      });
-    }
-  });
-},{threshold:0.1});
+// REVEAL
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('[data-count]').forEach(animateCount);}});
+},{threshold:.1});
+document.querySelectorAll('[data-anim]').forEach(el=>obs.observe(el));
 
-document.querySelectorAll('[data-anim]').forEach(el=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(40px)';
-  el.style.transition='opacity 0.8s ease, transform 0.8s ease';
-  observer.observe(el);
-});
-
-// COUNTER ANIMATION
+// COUNTER
 function animateCount(el){
-  if(el.dataset.animated)return;
-  el.dataset.animated='1';
-  const target=parseInt(el.dataset.count);
-  const suffix=el.dataset.suffix||'';
-  const prefix=suffix==='~'?'~':'';
-  const realSuffix=suffix==='~'?'':suffix;
-  let current=0;
-  const step=target/50;
-  const interval=setInterval(()=>{
-    current+=step;
-    if(current>=target){
-      current=target;
-      clearInterval(interval);
-    }
-    el.textContent=prefix+Math.floor(current).toLocaleString()+realSuffix;
-  },30);
+  if(el.dataset.done)return;el.dataset.done='1';
+  const target=+el.dataset.count;const suffix=el.dataset.suffix||'';const prefix=el.dataset.prefix||'';
+  let cur=0;const step=target/50;
+  const iv=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(iv);}el.textContent=prefix+Math.floor(cur).toLocaleString()+suffix;},30);
 }
+
+// LIVE STATS
+async function loadLive(){
+  try{
+    const r=await fetch('api.php?t='+Date.now());
+    const d=await r.json();
+    document.getElementById('lv-total').textContent=d.totalRequests.toLocaleString();
+    document.getElementById('lv-unique').textContent=d.uniqueVisitors.toLocaleString();
+    document.getElementById('lv-24h').textContent=d.visitors24h.toLocaleString();
+  }catch(e){}
+}
+loadLive();
+setInterval(loadLive,30000);
 </script>
 
 </body>
