@@ -1203,7 +1203,8 @@
     </button>
     <ul id="navMenu">
       <li><a href="#origin">Origin</a></li>
-      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#chronology">History</a></li>
+      <li><a href="#timeline">July 20</a></li>
       <li><a href="#demands">Demands</a></li>
       <li><a href="#people">People</a></li>
       <li><a href="#movement">Movement</a></li>
@@ -1283,10 +1284,149 @@
   </div>
 </section>
 
+<!-- FULL CHRONOLOGY -->
+<section id="chronology" class="fade-in">
+  <div class="section-label">
+    <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    Complete History
+  </div>
+  <h2 class="section-title">83 Days That Shook India</h2>
+  <p class="section-subtitle">From the NEET paper leak to the Education Minister's resignation. Every event, every day. May 3 to July 25, 2026.</p>
+
+  <!-- Filter buttons -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 32px;" id="chronoFilters">
+    <button class="chrono-filter active" onclick="filterChrono('all', this)">All</button>
+    <button class="chrono-filter" onclick="filterChrono('leak', this)">Paper Leak</button>
+    <button class="chrono-filter" onclick="filterChrono('court', this)">Courts</button>
+    <button class="chrono-filter" onclick="filterChrono('protest', this)">Protests</button>
+    <button class="chrono-filter" onclick="filterChrono('violence', this)">Violence</button>
+    <button class="chrono-filter" onclick="filterChrono('govt', this)">Government</button>
+    <button class="chrono-filter" onclick="filterChrono('social', this)">Social Media</button>
+    <button class="chrono-filter" onclick="filterChrono('suicide', this)">Tragedy</button>
+    <button class="chrono-filter" onclick="filterChrono('victory', this)">Victory</button>
+  </div>
+
+  <div id="chronoContainer"></div>
+</section>
+
+<style>
+.chrono-filter{font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;border:1px solid var(--gray-border);background:var(--bg-card);color:var(--text-dim);cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.5px;font-family:'Inter',sans-serif}
+.chrono-filter:hover{border-color:var(--red-light);color:var(--white)}
+.chrono-filter.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:var(--white);border-color:transparent}
+.chrono-month-header{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;color:var(--white);margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--red-dark);letter-spacing:2px}
+.chrono-month-header .count{font-size:12px;color:var(--gray);font-family:'Inter',sans-serif;font-weight:400}
+.chrono-timeline{position:relative;padding-left:28px;border-left:2px solid var(--gray-border)}
+.chrono-event{position:relative;margin-bottom:20px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--gray-border);border-radius:10px;transition:all .3s}
+.chrono-event:hover{border-color:var(--red-dark);transform:translateX(4px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.chrono-event::before{content:'';position:absolute;left:-35px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--red);z-index:1}
+.chrono-event.chrono-major::before{background:var(--red);box-shadow:0 0 10px var(--red)}
+.chrono-event.chrono-victory::before{background:var(--green);border-color:var(--green);box-shadow:0 0 10px var(--green)}
+.chrono-event.chrono-highlight::before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 10px var(--amber)}
+.chrono-event-date{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+.chrono-event-date .chrono-day{font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:var(--red-light);text-transform:uppercase;letter-spacing:1px}
+.chrono-cat-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px}
+.chrono-cat-leak{background:rgba(225,29,72,.15);color:var(--red-light)}
+.chrono-cat-court{background:rgba(168,85,247,.15);color:#c084fc}
+.chrono-cat-protest{background:rgba(245,158,11,.15);color:#fbbf24}
+.chrono-cat-violence{background:rgba(220,38,38,.2);color:#f87171}
+.chrono-cat-govt{background:rgba(59,130,246,.15);color:#60a5fa}
+.chrono-cat-social{background:rgba(16,185,129,.15);color:#34d399}
+.chrono-cat-suicide{background:rgba(107,114,128,.2);color:#9ca3af}
+.chrono-cat-victory{background:rgba(16,185,129,.2);color:#34d399}
+.chrono-cat-intl{background:rgba(6,182,212,.15);color:#22d3ee}
+.chrono-event h3{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.chrono-event p{font-size:13px;color:var(--text-dim);line-height:1.7}
+.chrono-event p strong{color:var(--white)}
+.chrono-event p em{color:var(--red-light);font-style:italic}
+.chrono-event .chrono-source{font-size:10px;color:var(--gray);margin-top:6px;font-style:italic}
+@media(max-width:768px){.chrono-timeline{padding-left:20px}.chrono-event{padding:14px}}
+</style>
+
+<script>
+const chronoEvents=[
+{date:"Apr 23",month:"April",cat:"leak",title:"Leak Chain Activated",desc:"<strong>Shivraj Motegaonkar</strong> (Latur coaching owner) receives chemistry questions. <strong>Manisha Havaldar</strong> (NTA expert) recalls physics questions from memory.",source:"Wikipedia",major:false},
+{date:"May 1",month:"May",cat:"leak",title:"Guess Paper Circulates in Sikar",desc:"Handwritten \"guess paper\" with ~300 questions circulates in Sikar, Rajasthan; ~140 questions reportedly match the actual exam.",source:"Deccan Herald",major:false},
+{date:"May 3",month:"May",cat:"leak",title:"NEET-UG 2026 Exam Held",desc:"Exam conducted for <strong>2.27+ million aspirants</strong>. NTA claims full security protocol. Initially declared smooth.",source:"India Today",major:true},
+{date:"May 4-6",month:"May",cat:"leak",title:"Whistleblower Emerges",desc:"<strong>Shashikant Suthar</strong>, chemistry teacher from Sikar, blows the whistle after comparing guess paper with official paper. <strong>120+ questions match</strong>.",source:"NDTV; The Hindu",major:false},
+{date:"May 7-8",month:"May",cat:"leak",title:"NTA Alerted &amp; CBI Probe",desc:"Matter escalated to central agencies. <strong>20+ people detained</strong>. Former RPSC member arrested. Rajasthan SOG begins probe.",source:"Times of India",major:false},
+{date:"May 12",month:"May",cat:"leak",title:"NEET-UG 2026 CANCELLED",desc:"NTA officially cancels the May 3 exam <em>\"in the interest of students.\"</em> Matter transferred to <strong>CBI</strong>. <strong>Pradhan admits \"breach in the command chain.\"</strong>",source:"India Today",major:true},
+{date:"May 13",month:"May",cat:"leak",title:"CBSE OSM Controversy Begins",desc:"CBSE announces Class 12 results with new <strong>On-Screen Marking</strong> system. Students report blurred scans, missing pages, mismatched answer sheets.",source:"Wikipedia",major:false},
+{date:"May 14",month:"May",cat:"protest",title:"First Student Protest at Jantar Mantar",desc:"<strong>AISA</strong> members and students protest against the NEET-UG 2026 scam at Jantar Mantar.",source:"Reuters Connect",major:false},
+{date:"May 15",month:"May",cat:"social",title:"CJI SURYA KANT'S \"COCKROACH\" REMARK",desc:"During a Supreme Court hearing about fake law degrees, CJI states: <em>\"There are youngsters like cockroaches; they don't get any employment... they start attacking everyone.\"</em> NTA announces re-exam: June 21.",source:"Wikipedia",major:true},
+{date:"May 16",month:"May",cat:"social",title:"CJP FOUNDED",desc:"<strong>Abhijeet Dipke</strong> (30, Boston University graduate, Dalit from Aurangabad) launches the <strong>Cockroach Janta Party</strong> online. Tagline: \"Voice of the Lazy &amp; Unemployed.\"",source:"Reuters",major:true},
+{date:"May 17-18",month:"May",cat:"social",title:"Instagram Hits 1 Million Followers",desc:"CJP Instagram crosses <strong>1 million followers</strong> within ~2 days. Explosive viral growth begins.",source:"NDTV",major:false},
+{date:"May 20",month:"May",cat:"social",title:"Instagram Crosses 15.5 Million",desc:"NDTV reports <strong>6M+</strong>. Other sources: <strong>15.5M by evening</strong>. CJP surpasses BJP (~9.4M) and Congress on Instagram.",source:"NDTV; OnManorama",major:false},
+{date:"May 21",month:"May",cat:"court",title:"CJP X/Twitter Account Withheld",desc:"CJP's X account <strong>withheld in India</strong> under Section 69(A) IT Act citing \"national security.\" CJP returns within minutes as \"Cockroach is Back.\" <strong>Dipke reveals Dalit identity.</strong>",source:"Hindustan Times; IFF",major:false},
+{date:"May 23",month:"May",cat:"govt",title:"CJP Website Taken Down",desc:"Government takes down CJP's website. Instagram at <strong>22 million+ followers</strong> &mdash; more than double BJP's following.",source:"Al Jazeera; BBC",major:false},
+{date:"May 25",month:"May",cat:"court",title:"SC Seeks Status Report",desc:"Supreme Court seeks status report on implementation of recommendations from its 2024 NEET-UG ruling.",source:"Deccan Herald",major:false},
+{date:"May 26",month:"May",cat:"court",title:"Dipke Moves Delhi HC; CBI Arrest",desc:"Dipke files petition challenging X account blocking. No interim relief. <strong>CBI arrests Tejas Shah</strong> &mdash; contact saved as \"God\" in suspect's phone.",source:"Economic Times; Indian Express",major:false},
+{date:"Jun 2",month:"June",cat:"court",title:"Allahabad HC Rejects PIL Against CJP",desc:"Allahabad HC refuses PIL filed by BJP worker seeking probe against CJP. Directs petitioner to approach Karnataka HC.",source:"Live Law",major:false},
+{date:"Jun 6",month:"June",cat:"protest",title:"FIRST CJP STREET PROTEST AT JANTAR MANTAR",desc:"CJP holds <strong>first major street protest</strong> at Jantar Mantar. <strong>~5,000 police deployed</strong>. First major demo since 2023 wrestlers' protest.",source:"BBC; Al Jazeera",major:true},
+{date:"Jun 11",month:"June",cat:"protest",title:"Nationwide Campaign Launched",desc:"CJP launches nationwide campaign from Pune. Releases <strong>\"Exam Manifesto\"</strong> with 5 demands.",source:"Wikipedia",major:false},
+{date:"Jun 15",month:"June",cat:"violence",title:"JAIPUR ASSAULT ON DIPKE",desc:"Two men <strong>slap and manhandle Dipke</strong> during a Jaipur rally. Attacker: <em>\"I'm a nationalist.\"</em> Attackers <strong>garlanded after release</strong>.",source:"NDTV; The Print",major:true},
+{date:"Jun 17",month:"June",cat:"court",title:"SC Defers Re-Exam Challenge",desc:"Supreme Court defers to July the hearing of plea challenging NTA's re-exam decision.",source:"The Hindu",major:false},
+{date:"Jun 20",month:"June",cat:"protest",title:"CJP INDEFINITE SIT-IN BEGINS",desc:"CJP begins <strong>indefinite sit-in at Jantar Mantar</strong>. Police cut lights and water. Pradhan calls protesters <em>\"B-team of terrorists.\"</em>",source:"Hindustan Times",major:true},
+{date:"Jun 20",month:"June",cat:"suicide",title:"Student Suicide: Sheikh Sana, 19",desc:"<strong>Sheikh Sana</strong>, 19-year-old NEET aspirant in Hyderabad, <strong>dies by suicide</strong> one day before the re-exam.",source:"Statesman; Indian Express",major:false},
+{date:"Jun 21",month:"June",cat:"leak",title:"NEET-UG 2026 RE-EXAM CONDUCTED",desc:"Re-examination held under enhanced security. Paper <strong>tougher than cancelled exam</strong>. ~270,000+ candidates skip.",source:"BBC; New Indian Express",major:false},
+{date:"Jun 28",month:"June",cat:"protest",title:"SONAM WANGCHUK JOINS - BEGINS HUNGER STRIKE",desc:"<strong>Sonam Wangchuk (59)</strong> joins CJP protest, begins <strong>indefinite hunger strike</strong> alongside 6 AISA students. Visits Rajghat first.",source:"Times of India; The Wire",major:true},
+{date:"Jun 30",month:"June",cat:"protest",title:"\"Pradhan Go Back\" Campaign Launched",desc:"CJP launches nationwide <strong>\"Pradhan Go Back\" campaign</strong>.",source:"Wikipedia",major:false},
+{date:"Jul 3",month:"July",cat:"leak",title:"Re-NEET Blunders Exposed",desc:"Re-exam Physics paper had <strong>one question with no correct answer</strong> and <strong>another with two correct answers</strong>.",source:"New Indian Express",major:false},
+{date:"Jul 7",month:"July",cat:"court",title:"DELHI HC ORDERS CJP X ACCOUNT UNBLOCKED",desc:"Delhi HC: <em>\"concern no longer relevant.\"</em> Dipke calls it <strong>\"big victory for free speech.\"</strong>",source:"Hindustan Times; Lawbeat",major:false},
+{date:"Jul 14",month:"July",cat:"protest",title:"Kejriwal Extends Support",desc:"<strong>Kejriwal</strong>: <em>\"He is an asset of the country.\"</em> Announces visit to Jantar Mantar on July 16.",source:"The Hindu",major:false},
+{date:"Jul 16",month:"July",cat:"govt",title:"NEET RE-EXAM RESULTS DECLARED",desc:"<strong>11.21 lakh candidates qualify.</strong> OMR controversy erupts &mdash; massive discrepancies between OMR responses and final marks.",source:"India Today; Economic Times",major:true},
+{date:"Jul 16",month:"July",cat:"protest",title:"Kejriwal Visits Jantar Mantar",desc:"Kejriwal visits at 5 PM, demands Pradhan's ouster, suggests <strong>making Wangchuk the new Education Minister.</strong>",source:"The Hindu",major:false},
+{date:"Jul 18",month:"July",cat:"violence",title:"WANGCHUK FORCIBLY REMOVED + INK ATTACK",desc:"<strong>1)</strong> Police remove Wangchuk (Day 21) to Safdarjung Hospital. <strong>2)</strong> Dipke begins hunger strike. <strong>3)</strong> Woman throws <strong>blue ink at Dipke</strong>.",source:"Al Jazeera; The Hindu; DW",major:true},
+{date:"Jul 19",month:"July",cat:"protest",title:"Sansad Chalo Announced",desc:"Wangchuk from hospital: <em>\"India's second freedom movement.\"</em> CJP warns of <strong>\"infiltrators\"</strong>.",source:"Al Jazeera; DW",major:false},
+{date:"Jul 21",month:"July",cat:"protest",title:"PROTESTERS RECLAIM JANTAR MANTAR",desc:"Hundreds regroup after police destroyed tents. <strong>Rahul &amp; Priyanka Gandhi detained</strong> near Modi's residence. <strong>Sharad Pawar, Uddhav Thackeray</strong> visit.",source:"The Hindu; Hindustan Times",major:false},
+{date:"Jul 22",month:"July",cat:"protest",title:"PROTESTS SPREAD NATIONWIDE",desc:"Demonstrations in <strong>Mumbai, Bengaluru, Kolkata, Hyderabad</strong>. <strong>20 CRPF companies airlifted from Kolkata.</strong> <strong>65 opposition MPs</strong> urge Wangchuk to end fast.",source:"The Hindu; Hindustan Times",major:false},
+{date:"Jul 22",month:"July",cat:"court",title:"CJI REJECTS POLICE BRUTALITY HEARING",desc:"CJI Surya Kant: <em>\"Don't waste our time. We are not interested in videos.\"</em> Delhi HC orders preserve all CCTV footage.",source:"Live Law; The Hindu",major:false},
+{date:"Jul 23",month:"July",cat:"victory",title:"WANGCHUK BREAKS 26-DAY FAST",desc:"<strong>Wangchuk breaks fast</strong> in presence of Union Ministers. Government gives <strong>written assurances</strong>: cases against non-violent students withdrawn.",source:"The Hindu; DW",major:false},
+{date:"Jul 23",month:"July",cat:"govt",title:"PM MODI ANNOUNCES FAST-TRACK COURTS",desc:"PM Modi: <em>\"A paper leak is no ordinary lapse; it is an injustice.\"</em> Cabinet approves draft bill for stricter punishments.",source:"India Today; DW",major:false},
+{date:"Jul 24",month:"July",cat:"govt",title:"GOVERNMENT-CJP TALKS",desc:"CJP meets <strong>Nadda and Jitendra Singh</strong> at Constitution Club. Government <strong>\"seeks time\"</strong> on Pradhan resignation. Second round: July 25.",source:"DW; The Hindu",major:false},
+{date:"Jul 25",month:"July",cat:"victory",title:"DHARMENDRA PRADHAN RESIGNS",desc:"<strong>Education Minister Pradhan resigns</strong>, accepting <em>\"moral responsibility.\"</em> <strong>Dipke: \"We have done it.\"</strong> Reads names of all suicide victims.",source:"NDTV; DW; Hindustan Times",major:true}
+];
+
+const chronoCatNames={leak:'Paper Leak',court:'Courts',protest:'Protests',violence:'Violence',govt:'Government',social:'Social Media',suicide:'Tragedy',victory:'Victory',intl:'International',celeb:'Celebrity'};
+const chronoMonths=['April','May','June','July'];
+
+function renderChrono(filter){
+  let html='';
+  let tlOpen=false;
+  chronoMonths.forEach(month=>{
+    const monthEvents=chronoEvents.filter(e=>e.month===month&&(filter==='all'||e.cat===filter));
+    if(monthEvents.length===0)return;
+    if(tlOpen){html+='</div>';tlOpen=false;}
+    html+=`<div class="chrono-month-header">${month} <span class="count">(${monthEvents.length} events)</span></div>`;
+    html+='<div class="chrono-timeline">';
+    tlOpen=true;
+    monthEvents.forEach(e=>{
+      const cls=e.major?'chrono-major':e.cat==='victory'?'chrono-victory':'';
+      html+=`<div class="chrono-event ${cls}" data-cat="${e.cat}">
+        <div class="chrono-event-date">
+          <span class="chrono-day">${e.date}</span>
+          <span class="chrono-cat-badge chrono-cat-${e.cat}">${chronoCatNames[e.cat]||e.cat}</span>
+        </div>
+        <h3>${e.title}</h3>
+        <p>${e.desc}</p>
+        <div class="chrono-source">${e.source}</div>
+      </div>`;
+    });
+  });
+  if(tlOpen)html+='</div>';
+  document.getElementById('chronoContainer').innerHTML=html||'<div style="text-align:center;padding:40px;color:var(--gray)">No events in this category.</div>';
+}
+function filterChrono(cat,btn){
+  document.querySelectorAll('.chrono-filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderChrono(cat);
+}
+renderChrono('all');
+</script>
+
 <!-- TIMELINE -->
 <section id="timeline" class="fade-in">
   <div class="section-label"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Hour by Hour</div>
-  <h2 class="section-title">Black Day Timeline</h2>
+  <h2 class="section-title">July 20: Black Day Timeline</h2>
   <p class="section-subtitle">
     The complete sequence of events on July 20, 2026, from pre-dawn lockdown to the midnight reclaim. Every timestamp verified across NDTV, Indian Express, Deccan Herald, ETV Bharat, NBC/AP, The Hindu, and BBC.
   </p>
