@@ -2998,5 +2998,125 @@
         "state": "Michigan",
         "country": "United States",
         "isp": "Censys, Inc."
+    },
+    "49.51.52.250": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "OPHL"
+    },
+    "152.59.52.58": {
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "country": "India",
+        "isp": "RELIANCEJIO"
+    },
+    "198.235.24.5": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "205.210.31.165": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "45.55.133.128": {
+        "city": "Clifton",
+        "state": "New Jersey",
+        "country": "United States",
+        "isp": "DigitalOcean, LLC"
+    },
+    "205.210.31.86": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "205.210.31.148": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "43.135.144.81": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    "205.210.31.21": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "43.167.245.18": {
+        "city": "Tokyo",
+        "state": "Tokyo",
+        "country": "Japan",
+        "isp": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    "68.183.227.28": {
+        "city": "Singapore",
+        "state": "South West",
+        "country": "Singapore",
+        "isp": "DigitalOcean, LLC"
+    },
+    "198.235.24.167": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "205.210.31.15": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "20.65.194.42": {
+        "city": "San Antonio",
+        "state": "Texas",
+        "country": "United States",
+        "isp": "Microsoft Corporation"
+    },
+    "43.153.123.4": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    "198.235.24.18": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "24.144.93.52": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "DigitalOcean, LLC"
+    },
+    "162.141.167.14": {
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "isp": "Interserver, Inc"
+    },
+    "43.167.239.66": {
+        "city": "Shibuya City",
+        "state": "Tokyo",
+        "country": "Japan",
+        "isp": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    "146.190.252.1": {
+        "city": "Toronto",
+        "state": "Ontario",
+        "country": "Canada",
+        "isp": "DigitalOcean, LLC"
     }
 }
