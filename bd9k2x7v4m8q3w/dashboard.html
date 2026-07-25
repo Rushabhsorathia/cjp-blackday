@@ -83,6 +83,19 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-h
 .browser-Edge{background:rgba(0,120,215,.15);color:#5ba3e0}
 .browser-Bot{background:rgba(107,114,128,.15);color:var(--gray)}
 .browser-Other{background:rgba(156,163,175,.1);color:var(--dim)}
+/* Device badges */
+.device-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px}
+.device-Desktop{background:rgba(59,130,246,.15);color:#60a5fa}
+.device-Mobile{background:rgba(16,185,129,.15);color:#34d399}
+.device-Tablet{background:rgba(168,85,247,.15);color:#c084fc}
+.device-Bot{background:rgba(107,114,128,.15);color:var(--gray)}
+.device-Unknown{background:rgba(156,163,175,.1);color:var(--dim)}
+/* ISP badges */
+.isp-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--bg3);color:var(--dim);text-transform:uppercase;letter-spacing:.5px}
+/* Country badges */
+.country-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px}
+.country-India{background:rgba(249,115,22,.15);color:#fb923c}
+.country-International{background:rgba(56,189,248,.15);color:#38bdf8}
 .path-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--bg3);color:var(--dim);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--mono)}
 
 /* GRID 2-col */
@@ -170,7 +183,7 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-h
   </div>
 
   <!-- CONTENT + BROWSERS ROW -->
-  <div class="grid-2">
+  <div class="grid-3">
     <!-- Top paths -->
     <div class="panel">
       <div class="panel-header"><div class="panel-title">Top Pages</div></div>
@@ -191,6 +204,50 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-h
         </table>
       </div>
     </div>
+    <!-- Devices -->
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title">Device Type</div></div>
+      <div class="panel-body" style="padding:0">
+        <table class="data-table" id="deviceTable">
+          <thead><tr><th>Device</th><th style="text-align:right">Hits</th><th style="text-align:right">%</th></tr></thead>
+          <tbody><tr><td colspan="3" class="loading"><span class="spin"></span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- OS + ISP + COUNTRY ROW -->
+  <div class="grid-3">
+    <!-- OS -->
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title">Operating Systems</div></div>
+      <div class="panel-body" style="padding:0">
+        <table class="data-table" id="osTable">
+          <thead><tr><th>OS</th><th style="text-align:right">Hits</th><th style="text-align:right">%</th></tr></thead>
+          <tbody><tr><td colspan="3" class="loading"><span class="spin"></span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- ISPs -->
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title">ISP / Network</div></div>
+      <div class="panel-body" style="padding:0">
+        <table class="data-table" id="ispTable">
+          <thead><tr><th>ISP</th><th style="text-align:right">Hits</th><th style="text-align:right">%</th></tr></thead>
+          <tbody><tr><td colspan="3" class="loading"><span class="spin"></span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Country -->
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title">Origin</div></div>
+      <div class="panel-body" style="padding:0">
+        <table class="data-table" id="countryTable">
+          <thead><tr><th>Region</th><th style="text-align:right">Hits</th><th style="text-align:right">%</th></tr></thead>
+          <tbody><tr><td colspan="3" class="loading"><span class="spin"></span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <!-- TOP VISITORS -->
@@ -205,14 +262,17 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-h
         <thead>
           <tr>
             <th>IP Address</th>
-            <th>Requests</th>
-            <th>First Seen</th>
-            <th>Last Seen</th>
+            <th>Req</th>
+            <th>Device</th>
+            <th>OS</th>
             <th>Browser</th>
-            <th>Pages Visited</th>
+            <th>ISP</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Pages</th>
           </tr>
         </thead>
-        <tbody><tr><td colspan="6" class="loading"><span class="spin"></span></td></tr></tbody>
+        <tbody><tr><td colspan="9" class="loading"><span class="spin"></span></td></tr></tbody>
       </table>
       </div>
     </div>
@@ -233,10 +293,12 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-h
             <th>IP</th>
             <th>Path</th>
             <th>Status</th>
+            <th>Device</th>
+            <th>OS</th>
             <th>Browser</th>
           </tr>
         </thead>
-        <tbody><tr><td colspan="5" class="loading"><span class="spin"></span></td></tr></tbody>
+        <tbody><tr><td colspan="7" class="loading"><span class="spin"></span></td></tr></tbody>
       </table>
       </div>
     </div>
@@ -307,6 +369,38 @@ function renderData(d) {
     return `<tr><td><span class="browser-badge browser-${name}">${name}</span></td><td style="text-align:right">${count}</td><td style="text-align:right;color:var(--dim)">${pct}%</td></tr>`;
   }).join('');
 
+  // Device table
+  const devices = Object.entries(d.deviceStats || {}).sort((a, b) => b[1] - a[1]);
+  const totalDevice = devices.reduce((s, x) => s + x[1], 0) || 1;
+  document.getElementById('deviceTable').querySelector('tbody').innerHTML = devices.map(([name, count]) => {
+    const pct = ((count / totalDevice) * 100).toFixed(1);
+    return `<tr><td><span class="device-badge device-${name}">${name}</span></td><td style="text-align:right">${count}</td><td style="text-align:right;color:var(--dim)">${pct}%</td></tr>`;
+  }).join('');
+
+  // OS table
+  const osList = Object.entries(d.osStats || {}).sort((a, b) => b[1] - a[1]);
+  const totalOS = osList.reduce((s, x) => s + x[1], 0) || 1;
+  document.getElementById('osTable').querySelector('tbody').innerHTML = osList.map(([name, count]) => {
+    const pct = ((count / totalOS) * 100).toFixed(1);
+    return `<tr><td style="font-size:11px">${name}</td><td style="text-align:right">${count}</td><td style="text-align:right;color:var(--dim)">${pct}%</td></tr>`;
+  }).join('');
+
+  // ISP table
+  const isps = Object.entries(d.ispStats || {}).sort((a, b) => b[1] - a[1]);
+  const totalISP = isps.reduce((s, x) => s + x[1], 0) || 1;
+  document.getElementById('ispTable').querySelector('tbody').innerHTML = isps.map(([name, count]) => {
+    const pct = ((count / totalISP) * 100).toFixed(1);
+    return `<tr><td><span class="isp-badge">${name}</span></td><td style="text-align:right">${count}</td><td style="text-align:right;color:var(--dim)">${pct}%</td></tr>`;
+  }).join('');
+
+  // Country table
+  const countries = Object.entries(d.countryStats || {}).sort((a, b) => b[1] - a[1]);
+  const totalCountry = countries.reduce((s, x) => s + x[1], 0) || 1;
+  document.getElementById('countryTable').querySelector('tbody').innerHTML = countries.map(([name, count]) => {
+    const pct = ((count / totalCountry) * 100).toFixed(1);
+    return `<tr><td><span class="country-badge country-${name.replace(/[^a-zA-Z]/g,'')}">${name}</span></td><td style="text-align:right">${count}</td><td style="text-align:right;color:var(--dim)">${pct}%</td></tr>`;
+  }).join('');
+
   // Visitor table
   document.getElementById('visitorCount').textContent = `${d.topIPs.length} of ${d.uniqueVisitors} shown`;
   document.getElementById('visitorTable').querySelector('tbody').innerHTML = d.topIPs.map(v => {
@@ -314,10 +408,13 @@ function renderData(d) {
     return `<tr>
       <td style="color:var(--red-l);font-weight:600">${v.ip}</td>
       <td style="text-align:right;font-weight:700;color:var(--wht)">${v.requests}</td>
-      <td style="color:var(--dim)">${v.first}</td>
-      <td style="color:var(--dim)">${v.last}</td>
+      <td><span class="device-badge device-${v.device||'Unknown'}">${v.device||'-'}</span></td>
+      <td style="font-size:11px;color:var(--dim)">${v.os||'-'}</td>
       <td><span class="browser-badge browser-${v.browser}">${v.browser}</span></td>
-      <td style="max-width:300px">${paths}</td>
+      <td style="font-size:11px;color:var(--dim)">${v.isp||'-'}</td>
+      <td style="color:var(--gray);font-size:11px">${v.first}</td>
+      <td style="color:var(--gray);font-size:11px">${v.last}</td>
+      <td style="max-width:200px">${paths}</td>
     </tr>`;
   }).join('');
 
@@ -329,6 +426,8 @@ function renderData(d) {
       <td style="color:var(--red-l)">${r.ip}</td>
       <td><span class="path-badge">${r.path}</span></td>
       <td class="${statusClass}" style="font-weight:600">${r.status}</td>
+      <td><span class="device-badge device-${r.device||'Unknown'}">${r.device||'-'}</span></td>
+      <td style="font-size:11px;color:var(--dim)">${r.os||'-'}</td>
       <td><span class="browser-badge browser-${r.browser}">${r.browser}</span></td>
     </tr>`;
   }).join('');
