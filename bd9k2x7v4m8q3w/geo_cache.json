@@ -4072,5 +4072,65 @@
         "state": "Kowloon",
         "country": "Hong Kong",
         "isp": "Aceville Pte.ltd"
+    },
+    "74.7.227.43": {
+        "city": "Atlanta",
+        "state": "Georgia",
+        "country": "United States",
+        "isp": "Microsoft Corporation"
+    },
+    "138.68.107.117": {
+        "city": "Frankfurt am Main",
+        "state": "Hesse",
+        "country": "Germany",
+        "isp": "DigitalOcean, LLC"
+    },
+    "66.249.64.65": {
+        "city": "Pryor",
+        "state": "Oklahoma",
+        "country": "United States",
+        "isp": "Google LLC"
+    },
+    "45.79.8.221": {
+        "city": "Richardson",
+        "state": "Texas",
+        "country": "United States",
+        "isp": "Akamai Technologies, Inc."
+    },
+    "66.228.53.174": {
+        "city": "Richardson",
+        "state": "Texas",
+        "country": "United States",
+        "isp": "Akamai Technologies, Inc."
+    },
+    "43.135.145.117": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    "43.153.73.200": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    "143.110.232.157": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "DigitalOcean, LLC"
+    },
+    "43.130.102.223": {
+        "city": "Ashburn",
+        "state": "Virginia",
+        "country": "United States",
+        "isp": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    "205.210.31.84": {
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "isp": "Google LLC"
     }
 }
